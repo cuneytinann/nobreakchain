@@ -675,6 +675,8 @@
         min-height: 100vh;
         padding: 0.5rem 0.6rem;
         font-family: "Segoe UI", system-ui, sans-serif;
+        display: flex;
+        flex-direction: column;
       }
       /* ── ARKA PLAN ZİNCİR GÖRSELİ — chain-card içinde, scrollla birlikte ── */
       body::before {
@@ -729,7 +731,7 @@
         flex-direction: row;
         gap: 0;
         align-items: flex-start;
-        height: calc(100vh - 1rem);
+        flex: 1;
         min-height: 0;
       }
       #panel-col {
@@ -959,7 +961,7 @@
       }
       .top-bar-controls {
         gap: 0.4rem;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-wrap: nowrap;
         padding-left: 0.3rem;
       }
@@ -1582,7 +1584,8 @@
       .btn-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.6rem;
+        row-gap: 0.42rem;
+        column-gap: 1rem;
         margin-top: 0.42rem;
         justify-content: center;
       }
@@ -2185,10 +2188,11 @@
         transition: opacity 0.2s;
       }
       /* Kademeli görünüm: arka plan ne kadar belirginse, buton o kadar geri çekilir */
-      #btn-bg-toggle.bg-lvl-0 { opacity: 1; }
-      #btn-bg-toggle.bg-lvl-1 { opacity: 0.78; }
-      #btn-bg-toggle.bg-lvl-2 { opacity: 0.56; }
-      #btn-bg-toggle.bg-lvl-3 { opacity: 0.35; }
+      /* Kademeli görünüm: arka plan ne kadar belirginse, buton da o kadar belirgin */
+      #btn-bg-toggle.bg-lvl-0 { opacity: 0.35; }
+      #btn-bg-toggle.bg-lvl-1 { opacity: 0.55; }
+      #btn-bg-toggle.bg-lvl-2 { opacity: 0.78; }
+      #btn-bg-toggle.bg-lvl-3 { opacity: 1; }
       /* Eski class adı geriye dönük uyumluluk için */
       #btn-bg-toggle.bg-off {
         opacity: 0.35;
@@ -2198,19 +2202,18 @@
       }
       /* ── İLETİŞİM FOOTER (düz, soluk, tıklanmaz) ── */
       #site-footer {
-        position: fixed;
-        left: 0.6rem;
-        bottom: 0.5rem;
         display: flex;
         flex-direction: column;
         gap: 0.15rem;
-        z-index: 50;
+        margin-top: 0.6rem;
+        padding-top: 0.4rem;
         font-size: 0.7rem;
         color: var(--hint-color);
         opacity: 0.5;
         pointer-events: none;
         user-select: none;
         font-family: monospace;
+        align-self: flex-start;
       }
       .footer-line {
         display: inline-flex;
@@ -2224,9 +2227,7 @@
       }
       @media (max-width: 480px) {
         #site-footer {
-          font-size: 0.6rem;
-          left: 0.35rem;
-          bottom: 0.35rem;
+          font-size: 0.62rem;
         }
       }
 
@@ -2276,14 +2277,6 @@
               </select>
             </div>
             <div class="top-bar-group top-bar-controls">
-              <button id="btn-view" title="Tablo / Yılan görünümü">
-                <span class="knob"
-                  ><i class="fa-solid fa-table-cells"></i
-                ></span>
-              </button>
-              <button id="btn-bg-toggle" title="Arka plan görselini aç/kapa">
-                <i class="fa-solid fa-image"></i>
-              </button>
               <div class="knob-slider-wrap">
                 <input
                   type="range"
@@ -2295,6 +2288,14 @@
                 />
                 <span id="cell-size-val">64</span>
               </div>
+              <button id="btn-bg-toggle" title="Arka plan görselini aç/kapa">
+                <i class="fa-solid fa-image"></i>
+              </button>
+              <button id="btn-view" title="Tablo / Yılan görünümü">
+                <span class="knob"
+                  ><i class="fa-solid fa-table-cells"></i
+                ></span>
+              </button>
             </div>
           </div>
           <!-- ── BAŞLIK ── -->
@@ -4305,19 +4306,21 @@
         }
 
         if (btnBgToggle) {
-          /* 4 seviyeli opacity döngüsü: 0.3 -> 0.6 -> 0.9 -> 0 -> 0.3 ... */
-          var BG_LEVELS = [0.3, 0.6, 0.9, 0];
+          /* 4 seviyeli opacity (artan): 0 (kapalı) -> 0.3 -> 0.6 -> 0.9 -> başa dön
+             Buton seviye 0'da en saydam, seviye 3'te tam belirgin (senkron) */
+          var BG_LEVELS = [0, 0.3, 0.6, 0.9];
+          var DEFAULT_BG_IDX = 1; /* başlangıç: 0.3 */
           var bgLevel = parseInt(localStorage.getItem(BGOK), 10);
           if (isNaN(bgLevel) || bgLevel < 0 || bgLevel >= BG_LEVELS.length) {
-            /* Eski 0/1 key'inden migrate: "0" -> kapalı (idx 3), diğer -> default (idx 0) */
-            bgLevel = localStorage.getItem(BGK) === "0" ? 3 : 0;
+            /* Eski 0/1 key'inden migrate: "0" -> kapalı (idx 0), diğer -> default */
+            bgLevel = localStorage.getItem(BGK) === "0" ? 0 : DEFAULT_BG_IDX;
           }
           function applyBgLevel(idx) {
             var op = BG_LEVELS[idx];
             document.body.style.setProperty("--bg-chain-opacity", op);
             var off = op === 0;
             document.body.classList.toggle("bg-off", off);
-            /* Buton üzerinde kademeli class: bg-lvl-0..3 */
+            /* Buton üzerinde kademeli class: bg-lvl-0..3 (arka planla senkron) */
             for (var i = 0; i < BG_LEVELS.length; i++) {
               btnBgToggle.classList.toggle("bg-lvl-" + i, i === idx);
             }
@@ -4577,8 +4580,8 @@
     <!-- ── İletişim / footer ── -->
     <footer id="site-footer" aria-label="İletişim">
       <span class="footer-line">
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-        github.com/cuneytinann
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        linkedin.com/in/cuneytinan
       </span>
       <span class="footer-line">
         <i class="fa-regular fa-envelope" aria-hidden="true"></i>
