@@ -2034,7 +2034,7 @@
         bottom: calc(100% + 2px);
         left: 50%;
         transform: translateX(-50%);
-        font-size: calc(var(--cs-snake, var(--cs)) * 0.28);
+        font-size: calc(var(--cs-snake, var(--cs)) * 0.22);
         white-space: nowrap;
         color: var(--row-hd-color);
         background: var(--row-hd-bg);
@@ -3327,13 +3327,14 @@
           bclose.className = "btn-ca";
           bclose.innerHTML = '<i class="fa-solid fa-xmark"></i> Kapat';
           bclose.addEventListener("click", function () {
-            /* help sekmesini kaldır, ilk zincire geç */
+            /* help sekmesini tamamen kaldır, ilk zincire geç */
             var s = gs();
-            if (s.order.length) setActive(s.order[0]);
-            else {
+            if (s.order.length) {
+              activeId = s.order[0];
+            } else {
               activeId = null;
-              renderAll();
             }
+            renderAll();
           });
           acts.appendChild(bclose);
           meta.appendChild(title);
