@@ -675,8 +675,6 @@
         min-height: 100vh;
         padding: 0.5rem 0.6rem;
         font-family: "Segoe UI", system-ui, sans-serif;
-        display: flex;
-        flex-direction: column;
       }
       /* ── ARKA PLAN ZİNCİR GÖRSELİ — chain-card içinde, scrollla birlikte ── */
       body::before {
@@ -731,7 +729,7 @@
         flex-direction: row;
         gap: 0;
         align-items: flex-start;
-        flex: 1;
+        height: calc(100vh - 1rem);
         min-height: 0;
       }
       #panel-col {
@@ -748,6 +746,18 @@
         transition:
           width 0.28s ease,
           opacity 0.22s ease;
+      }
+      /* Desktop footer panel-col'un içinde, scroll'la birlikte aşağıya iner ama
+         min-height:100% sayesinde panel kısa olsa bile dipe yapışır */
+      #panel-col {
+        display: flex;
+        flex-direction: column;
+      }
+      #panel-col > #panel {
+        flex-shrink: 0;
+      }
+      #panel-col > .footer-block {
+        margin-top: auto; /* panel kısa olunca footer dipte kalır */
       }
       #panel-col.collapsed {
         width: 0 !important;
@@ -2200,8 +2210,9 @@
       body.bg-off::before {
         display: none;
       }
-      /* ── İLETİŞİM FOOTER (düz, soluk, tıklanmaz) ── */
-      #site-footer {
+      /* ── İLETİŞİM FOOTER ── */
+      .footer-block {
+        flex-shrink: 0;
         display: flex;
         flex-direction: column;
         gap: 0.15rem;
@@ -2209,25 +2220,53 @@
         padding-top: 0.4rem;
         font-size: 0.7rem;
         color: var(--hint-color);
-        opacity: 0.5;
+        opacity: 0.55;
         pointer-events: none;
         user-select: none;
         font-family: monospace;
-        align-self: flex-start;
       }
       .footer-line {
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
         white-space: nowrap;
+        color: var(--hint-color);
+        opacity: 0.55;
+        pointer-events: none;
+        user-select: none;
+        font-family: monospace;
+        font-size: 0.7rem;
       }
       .footer-line i {
         width: 0.85rem;
         text-align: center;
       }
-      @media (max-width: 480px) {
-        #site-footer {
+      /* Mobil footer öğeleri varsayılan: gizli */
+      .footer-mobile {
+        display: none;
+      }
+      /* Mobil (≤899px): desktop footer gizle, mobil footer görünsün, toggle satırına yerleşsin */
+      @media (max-width: 899px) {
+        .footer-desktop {
+          display: none;
+        }
+        .footer-mobile {
+          display: inline-flex;
           font-size: 0.62rem;
+        }
+        #toggle-col {
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.25rem 0.4rem;
+        }
+        .footer-mobile-left {
+          justify-self: start;
+        }
+        .footer-mobile-right {
+          justify-self: end;
         }
       }
 
@@ -2519,12 +2558,32 @@
           <!-- /panel-rows -->
         </div>
         <!-- /panel -->
+
+        <!-- Desktop footer: panel kolonunun altında (mobilde gizli) -->
+        <div class="footer-block footer-desktop" aria-label="İletişim">
+          <span class="footer-line">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            linkedin.com/in/cuneytinan
+          </span>
+          <span class="footer-line">
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+            cuneytinan37@gmail.com
+          </span>
+        </div>
       </div>
       <!-- /panel-col -->
 
       <!-- toggle strip -->
       <div id="toggle-col">
+        <span class="footer-line footer-mobile footer-mobile-left">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          linkedin.com/in/cuneytinan
+        </span>
         <button id="btn-toggle" title="Paneli gizle / göster">◀</button>
+        <span class="footer-line footer-mobile footer-mobile-right">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          cuneytinan37@gmail.com
+        </span>
       </div>
 
       <!-- chain column -->
@@ -4577,16 +4636,5 @@
       </ul>
     </template>
 
-    <!-- ── İletişim / footer ── -->
-    <footer id="site-footer" aria-label="İletişim">
-      <span class="footer-line">
-        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-        linkedin.com/in/cuneytinan
-      </span>
-      <span class="footer-line">
-        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-        cuneytinan37@gmail.com
-      </span>
-    </footer>
   </body>
 </html>
