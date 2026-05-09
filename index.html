@@ -89,8 +89,8 @@
         --cell-bd: rgb(0, 0, 0);
         --col-hd-bg: rgb(150, 150, 180);
         --col-hd-color: #000;
-        --row-hd-bg: rgb(150, 150, 180);
-        --row-hd-color: #000;
+        --row-hd-bg: rgb(190, 140, 140);
+        --row-hd-color: #2a0010;
         --empty-bg: rgb(127, 127, 127);
         --xmark: rgba(214, 5, 5, 0.7);
         --month-bd: rgb(24, 8, 95);
@@ -131,11 +131,16 @@
         --bg-chain: rgba(0, 0, 0, 0.2);
         --fx-toggle: rgba(255, 255, 255, 0.85);
         --fx-view: rgba(127, 67, 10, 0.5);
-        --fx-add: rgba(233, 77, 184, 0.5);
+        --fx-add: rgba(140, 140, 140, 0.5);
         --fx-load: rgba(138, 183, 224, 0.5);
         --fx-dl: rgba(110, 204, 102, 0.5);
         --fx-reset: rgba(236, 255, 61, 0.5);
         --fx-del: rgba(243, 68, 68, 0.5);
+      }
+      /* Default tema için footer-color (sadece default temada koyu renk) */
+      [data-theme=""],
+      html:not([data-theme]) {
+        --footer-color: #1a1a1a;
       }
       [data-theme="dark"] {
         --page-bg: rgb(24, 24, 26);
@@ -2128,18 +2133,23 @@
         color: rgb(140, 20, 20);
         border-color: rgb(200, 40, 40);
       }
+      .btn-neutral {
+        color: rgb(60, 60, 60);
+        border-color: rgb(140, 140, 140);
+      }
       textarea.note-inp {
         display: block;
-        width: 9rem;
-        box-sizing: content-box;
-        min-height: 80px;
-        resize: vertical;
+        width: 16rem;
+        max-width: 100%;
+        height: 8rem;
+        box-sizing: border-box;
+        resize: none;
         background: var(--note-bg);
         color: var(--note-color);
         border: 1px solid var(--note-bd);
         border-radius: 4px;
-        padding: 0.35rem;
-        font-size: 0.85rem;
+        padding: 0.5rem;
+        font-size: 0.9rem;
         font-family: inherit;
       }
       /* ── CELL SIZE KNOB SLIDER ── */
@@ -2215,11 +2225,11 @@
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.15rem;
+        gap: 0.18rem;
         margin-top: 0.6rem;
         padding-top: 0.4rem;
-        font-size: 0.7rem;
-        color: var(--hint-color);
+        font-size: 0.78rem;
+        color: var(--footer-color, var(--hint-color));
         opacity: 0.55;
         pointer-events: none;
         user-select: none;
@@ -2230,12 +2240,12 @@
         align-items: center;
         gap: 0.35rem;
         white-space: nowrap;
-        color: var(--hint-color);
+        color: var(--footer-color, var(--hint-color));
         opacity: 0.55;
         pointer-events: none;
         user-select: none;
         font-family: monospace;
-        font-size: 0.7rem;
+        font-size: 0.78rem;
       }
       .footer-line i {
         width: 0.85rem;
@@ -2252,7 +2262,7 @@
         }
         .footer-mobile {
           display: inline-flex;
-          font-size: 0.62rem;
+          font-size: 0.7rem;
         }
         #toggle-col {
           flex-direction: row;
@@ -2603,7 +2613,7 @@
         <div class="modal-ttl" id="mn-title">Not</div>
         <textarea class="note-inp" id="mn-input" placeholder=""></textarea>
         <div class="modal-acts">
-          <button class="btn-cancel" id="mn-cancel">İptal</button>
+          <button class="btn-neutral" id="mn-cancel">İptal</button>
           <button class="btn-cancel" id="mn-clear">Notu Sil</button>
           <button class="btn-ok" id="mn-ok">Kaydet</button>
         </div>
@@ -2621,7 +2631,6 @@
           LK = "zkm2_lang",
           CK = "zkm2_collapsed",
           CSK = "zkm2_cellsize",
-          BGK = "zkm2_bgvis",
           BGOK = "zkm2_bgopacity";
 
         /* ── I18N ── */
@@ -4372,9 +4381,10 @@
           var DEFAULT_BG_IDX = 1; /* başlangıç: 0.3 */
           var bgLevel = parseInt(localStorage.getItem(BGOK), 10);
           if (isNaN(bgLevel) || bgLevel < 0 || bgLevel >= BG_LEVELS.length) {
-            /* Eski 0/1 key'inden migrate: "0" -> kapalı (idx 0), diğer -> default */
-            bgLevel = localStorage.getItem(BGK) === "0" ? 0 : DEFAULT_BG_IDX;
+            bgLevel = DEFAULT_BG_IDX;
           }
+          /* Eski kullanılmayan key'i temizle (varsa) */
+          try { localStorage.removeItem("zkm2_bgvis"); } catch (e) {}
           function applyBgLevel(idx) {
             var op = BG_LEVELS[idx];
             document.body.style.setProperty("--bg-chain-opacity", op);
@@ -4386,8 +4396,6 @@
             }
             btnBgToggle.classList.toggle("bg-off", off);
             localStorage.setItem(BGOK, String(idx));
-            /* Geriye dönük: eski key'i de güncel tut */
-            localStorage.setItem(BGK, off ? "0" : "1");
           }
           applyBgLevel(bgLevel);
           btnBgToggle.addEventListener("click", function () {
