@@ -110,9 +110,9 @@
         --hr-color: rgb(150, 180, 170);
         --ctitle: rgb(245, 232, 200);
         --cinfo: rgb(220, 215, 200);
-        --prog-bg: rgba(30, 60, 80, 0.15);
-        --prog-fill: rgb(80, 150, 165);
-        --prog-txt: rgb(20, 50, 70);
+        --prog-bg: rgba(40, 90, 60, 0.15);
+        --prog-fill: rgb(90, 165, 110);
+        --prog-txt: rgb(30, 70, 45);
         --note-bg: rgb(252, 246, 220);
         --note-bd: rgb(165, 135, 75);
         --note-color: rgb(40, 30, 15);
@@ -674,42 +674,42 @@
         --btn-bg: rgb(248, 242, 226);
         --btn-shadow: rgba(120, 90, 50, 0.15);
         --cell-bg: rgb(254, 251, 240);
-        --cell-color: rgb(40, 25, 10);
+        --cell-color: rgb(25, 40, 95);
         --cell-bd: rgb(180, 160, 120);
         --col-hd-bg: rgb(235, 225, 195);
-        --col-hd-color: rgb(80, 55, 25);
+        --col-hd-color: rgb(25, 40, 95);
         --row-hd-bg: rgb(228, 218, 190);
-        --row-hd-color: rgb(90, 60, 25);
+        --row-hd-color: rgb(25, 40, 95);
         --empty-bg: rgb(230, 224, 205);
-        --xmark: rgba(160, 40, 20, 0.6);
-        --month-bd: rgb(100, 140, 180);
-        --year-bd: rgb(160, 40, 20);
-        --title-color: rgb(80, 45, 15);
-        --lbl-color: rgb(60, 40, 15);
+        --xmark: rgba(28, 50, 120, 0.78);
+        --month-bd: rgb(70, 100, 160);
+        --year-bd: rgb(25, 40, 95);
+        --title-color: rgb(25, 40, 95);
+        --lbl-color: rgb(30, 45, 100);
 
-        --label-checked: rgb(40, 25, 10);
-        --total-ring-color: rgb(50, 35, 12);
+        --label-checked: rgb(25, 40, 95);
+        --total-ring-color: rgb(25, 40, 95);
 
-        --hint-color: rgb(130, 105, 65);
+        --hint-color: rgb(80, 100, 150);
         --count-bg: rgba(200, 215, 240, 0.35);
         --count-bd: rgba(100, 140, 190, 0.4);
-        --count-num: rgb(40, 80, 160);
+        --count-num: rgb(25, 40, 95);
         --scr-thumb: rgb(170, 145, 100);
         --scr-track: rgba(200, 185, 150, 0.4);
         --hr-color: rgb(180, 160, 120);
-        --ctitle: rgb(50, 35, 12);
-        --cinfo: rgb(100, 80, 40);
-        --prog-bg: rgba(100, 140, 180, 0.15);
-        --prog-fill: rgb(70, 120, 180);
-        --prog-txt: rgb(30, 70, 140);
+        --ctitle: rgb(25, 40, 95);
+        --cinfo: rgb(80, 100, 150);
+        --prog-bg: rgba(25, 40, 95, 0.15);
+        --prog-fill: rgb(60, 90, 160);
+        --prog-txt: rgb(25, 40, 95);
         --note-bg: rgb(255, 252, 220);
         --note-bd: rgb(200, 180, 120);
-        --note-color: rgb(40, 25, 10);
+        --note-color: rgb(25, 40, 95);
         --modal-ov: rgba(80, 60, 30, 0.4);
         --modal-bg: rgb(252, 248, 232);
         --modal-bd: rgb(180, 155, 110);
         --inp-bg: rgb(255, 252, 240);
-        --inp-color: rgb(30, 18, 5);
+        --inp-color: rgb(25, 40, 95);
         --inp-bd: rgb(170, 145, 100);
         --pill-bd: rgb(160, 130, 80);
         --pill-chk: rgba(70, 120, 180, 0.25);
@@ -717,7 +717,7 @@
         --err-color: rgb(160, 30, 20);
         --err-bg: rgb(255, 240, 200);
         /* ── efekt & bg-chain ── */
-        --bg-chain: rgba(80, 60, 30, 0.12);
+        --bg-chain: rgba(25, 40, 95, 0.12);
         --fx-toggle: rgba(120, 85, 35, 0.35);
         --fx-view: rgba(100, 70, 25, 0.3);
         --fx-add: rgba(40, 120, 40, 0.3);
@@ -729,7 +729,7 @@
       /* Defter: kâğıt dokusu + kalem çizgisi hissi */
       [data-theme="defter"] .main-title {
         font-family: "Georgia", "Palatino Linotype", serif !important;
-        color: rgb(60, 35, 10);
+        color: rgb(25, 40, 95);
       }
       [data-theme="defter"] .chain-title {
         font-family: "Georgia", "Palatino Linotype", serif !important;
@@ -1728,12 +1728,12 @@
       }
       /* Defter — mürekkep/kâğıt tonları */
       [data-theme="defter"] #btn-toggle {
-        color: rgb(80, 45, 15);
-        border-color: rgb(130, 90, 40);
+        color: rgb(25, 40, 95);
+        border-color: rgb(70, 100, 160);
       }
       [data-theme="defter"] #btn-view {
-        color: rgb(60, 35, 10);
-        border-color: rgb(110, 80, 35);
+        color: rgb(25, 40, 95);
+        border-color: rgb(70, 100, 160);
       }
       [data-theme="defter"] #btn-add {
         color: rgb(30, 80, 30);
@@ -2153,6 +2153,16 @@
       .chtbl td.empty {
         background: var(--empty-bg);
         cursor: default;
+      }
+      /* Boş hücreler arkadaki zincir görselini geçirsin — saydam arka plan
+         (matrix temasında kasten siyah, oraya dokunma) */
+      html:not([data-theme="matrix"]) body:not(.bg-off) .chtbl td.empty {
+        background: transparent;
+        opacity: 0.5;
+      }
+      html:not([data-theme="matrix"]) body:not(.bg-off) .circle-cell.empty-ring {
+        background: transparent;
+        opacity: 0.5;
       }
       .chtbl td.mo {
         border-left: 2px dashed var(--month-bd) !important;
