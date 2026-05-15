@@ -104,7 +104,7 @@
 
         --count-bg: rgba(225, 215, 185, 0.45);
         --count-bd: rgba(120, 95, 55, 0.6);
-        --count-num: rgb(40, 70, 90);
+        --count-num: rgb(250, 235, 170);
         --scr-thumb: rgb(95, 130, 120);
         --scr-track: rgba(160, 190, 180, 0.5);
         --hr-color: rgb(150, 180, 170);
@@ -141,6 +141,9 @@
       [data-theme=""],
       html:not([data-theme]) {
         --footer-color: #1a1a1a;
+        --slider-fill: rgb(40, 70, 140);
+        --slider-bg: rgba(40, 70, 140, 0.18);
+        --slider-val-color: rgb(40, 70, 140);
       }
       [data-theme="dark"] {
         --page-bg: rgb(24, 24, 26);
@@ -2311,10 +2314,10 @@
         height: 0.45rem;
         background: linear-gradient(
           to right,
-          var(--prog-fill) 0%,
-          var(--prog-fill) var(--pct, 50%),
-          var(--prog-bg) var(--pct, 50%),
-          var(--prog-bg) 100%
+          var(--slider-fill, var(--prog-fill)) 0%,
+          var(--slider-fill, var(--prog-fill)) var(--pct, 50%),
+          var(--slider-bg, var(--prog-bg)) var(--pct, 50%),
+          var(--slider-bg, var(--prog-bg)) 100%
         );
         border-radius: 9rem;
         border: none;
@@ -2328,7 +2331,7 @@
         height: 1.25rem;
         border-radius: 50%;
         background: var(--btn-bg);
-        border: 2px solid var(--prog-fill);
+        border: 2px solid var(--slider-fill, var(--prog-fill));
         cursor: pointer;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
@@ -2337,12 +2340,12 @@
         height: 1.25rem;
         border-radius: 50%;
         background: var(--btn-bg);
-        border: 2px solid var(--prog-fill);
+        border: 2px solid var(--slider-fill, var(--prog-fill));
         cursor: pointer;
       }
       #cell-size-val {
         font-size: 0.72rem;
-        color: var(--hint-color);
+        color: var(--slider-val-color, var(--hint-color));
         min-width: 1.4rem;
         text-align: right;
         font-weight: 600;
