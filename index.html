@@ -351,13 +351,13 @@
           width: auto;
         }
       }
-      /* Matrix: boş hücreler tamamen görünmez */
+      /* Matrix: boş hücreler — arka plan zincir görseli geçsin diye saydam siyah */
       [data-theme="matrix"] .chtbl td.empty {
-        background: #000;
+        background: rgba(0, 0, 0, 0.55);
         border-color: #000;
       }
       [data-theme="matrix"] .snake-cont .circle-cell.empty-ring {
-        background: #000;
+        background: rgba(0, 0, 0, 0.55);
         border-color: #000;
         box-shadow: none;
       }
@@ -2154,15 +2154,13 @@
         background: var(--empty-bg);
         cursor: default;
       }
-      /* Boş hücreler arkadaki zincir görselini geçirsin — saydam arka plan
-         (matrix temasında kasten siyah, oraya dokunma) */
-      html:not([data-theme="matrix"]) body:not(.bg-off) .chtbl td.empty {
-        background: transparent;
-        opacity: 0.5;
+      /* Boş hücreler kendi rengini korusun ama arka plan zincirini geçirsin —
+         arka plan rengi color-mix ile saydamlaştırılır (transparent ile %35 karışım) */
+      body:not(.bg-off) .chtbl td.empty {
+        background: color-mix(in srgb, var(--empty-bg) 55%, transparent);
       }
-      html:not([data-theme="matrix"]) body:not(.bg-off) .circle-cell.empty-ring {
-        background: transparent;
-        opacity: 0.5;
+      body:not(.bg-off) .circle-cell.empty-ring {
+        background: color-mix(in srgb, var(--empty-bg) 55%, transparent);
       }
       .chtbl td.mo {
         border-left: 2px dashed var(--month-bd) !important;
