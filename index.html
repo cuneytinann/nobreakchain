@@ -96,32 +96,32 @@
         --month-bd: rgb(24, 8, 95);
         --year-bd: rgb(224, 16, 16);
         --title-color: #e60404;
-        --lbl-color: rgb(45, 15, 82);
+        --lbl-color: rgb(35, 55, 45);
 
         --label-checked: rgb(255, 255, 255);
         --total-ring-color: rgb(93, 38, 9);
-        --hint-color: rgb(15, 15, 0);
+        --hint-color: rgb(35, 50, 35);
 
-        --count-bg: rgba(207, 75, 190, 0.34);
-        --count-bd: rgba(182, 89, 146, 0.62);
-        --count-num: rgb(206, 238, 47);
-        --scr-thumb: rgb(111, 114, 100);
-        --scr-track: rgba(128, 154, 177, 0.7);
-        --hr-color: rgb(126, 173, 170);
+        --count-bg: rgba(225, 215, 185, 0.45);
+        --count-bd: rgba(120, 95, 55, 0.6);
+        --count-num: rgb(40, 70, 90);
+        --scr-thumb: rgb(95, 130, 120);
+        --scr-track: rgba(160, 190, 180, 0.5);
+        --hr-color: rgb(150, 180, 170);
         --ctitle: rgb(245, 232, 200);
         --cinfo: rgb(220, 215, 200);
-        --prog-bg: rgba(0, 0, 0, 0.1);
-        --prog-fill: rgb(20, 180, 200);
-        --prog-txt: rgb(0, 80, 100);
-        --note-bg: #ffffcc;
-        --note-bd: #cca;
-        --note-color: #333;
-        --modal-ov: rgba(0, 0, 0, 0.55);
-        --modal-bg: #f5f5f5;
-        --modal-bd: #ccc;
-        --inp-bg: #fff;
-        --inp-color: #111;
-        --inp-bd: #000;
+        --prog-bg: rgba(30, 60, 80, 0.15);
+        --prog-fill: rgb(80, 150, 165);
+        --prog-txt: rgb(20, 50, 70);
+        --note-bg: rgb(252, 246, 220);
+        --note-bd: rgb(165, 135, 75);
+        --note-color: rgb(40, 30, 15);
+        --modal-ov: rgba(20, 40, 35, 0.55);
+        --modal-bg: rgb(248, 244, 230);
+        --modal-bd: rgb(165, 145, 100);
+        --inp-bg: rgb(248, 244, 230);
+        --inp-color: rgb(30, 30, 50);
+        --inp-bd: rgb(60, 75, 70);
         --pill-bd: rgb(75, 53, 67);
         --pill-chk: rgba(0, 200, 0, 0.4);
         --pill-radio: rgba(107, 189, 221, 0.45);
@@ -936,7 +936,8 @@
         .prow-pair > .panel-row > .lbl {
           flex-shrink: 0;
         }
-        .prow-pair > .panel-row > input {
+        /* Yalnızca tarih input'ları geniş alanı paylaşsın; sayı (Satır/Sütun/Hedef/Halka) eski boyutta kalsın */
+        .prow-pair > .panel-row > input[type="date"] {
           min-width: 0;
           flex: 1 1 auto;
           width: auto;
