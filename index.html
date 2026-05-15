@@ -785,6 +785,10 @@
         pointer-events: none;
         z-index: 0;
       }
+      /* Snake modunda scroll içeriği boyuna kadar uzasın — JS ile --snake-bg-h ölçülüyor */
+      .chain-card.snake-card::before {
+        height: var(--snake-bg-h, 100%);
+      }
       /* Panel için zincir görselini 90° dikey döndür */
       #panel::before {
         /* width ile height'ı swap edip rotate edince dikey görünür */
@@ -3718,6 +3722,16 @@
             c.style.display = show ? "flex" : "none";
             if (show && !noScroll)
               c.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (show) updateSnakeBgHeight(c);
+          });
+        }
+        /* Snake modunda arkaplan zincir görseli, scroll edilen tam içerik yüksekliği boyunca uzasın */
+        function updateSnakeBgHeight(card) {
+          if (!card || !card.classList.contains("snake-card")) return;
+          /* Ölçümü bir sonraki frame'de yap (DOM yerleşsin) */
+          requestAnimationFrame(function () {
+            var h = card.scrollHeight;
+            if (h > 0) card.style.setProperty("--snake-bg-h", h + "px");
           });
         }
 
@@ -4632,6 +4646,14 @@
             .forEach(function (gw) {
               if (gw._snakeRender) requestAnimationFrame(gw._snakeRender);
             });
+          /* Render bitince arka plan yüksekliklerini güncelle */
+          requestAnimationFrame(function () {
+            document
+              .querySelectorAll(".chain-card.snake-card")
+              .forEach(function (c) {
+                if (c.style.display !== "none") updateSnakeBgHeight(c);
+              });
+          });
         }
 
         (function () {
