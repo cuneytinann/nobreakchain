@@ -1148,36 +1148,12 @@
       }
       .s-select {
         font-size: 0.76rem;
-        padding: 0.2rem 1.1rem 0.2rem 0.4rem;
+        padding: 0.2rem;
         border-radius: 3px;
         border: 1px solid var(--inp-bd);
-        background-color: var(--inp-bg);
+        background: var(--inp-bg);
         color: var(--inp-color);
         cursor: pointer;
-        /* Native browser ayraç çizgisini ve oku kaldır, kendi okumuzu çiz */
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        background-image:
-          linear-gradient(45deg, transparent 50%, currentColor 50%),
-          linear-gradient(135deg, currentColor 50%, transparent 50%);
-        background-position:
-          calc(100% - 0.55rem) 50%,
-          calc(100% - 0.3rem) 50%;
-        background-size:
-          0.28rem 0.28rem,
-          0.28rem 0.28rem;
-        background-repeat: no-repeat;
-      }
-      /* IE/Edge legacy arrow kaldır */
-      .s-select::-ms-expand {
-        display: none;
-      }
-      /* Dropdown açıldığında option listesinde sağda görünen ayraç çizgisi —
-         browserlar option'a CSS izin verirse renkler tema ile uyumlu olsun */
-      .s-select option {
-        background-color: var(--inp-bg);
-        color: var(--inp-color);
       }
       /* Sabit select genişlikleri: dil/tema seçimi top-bar layout'unu bozmasın */
       #lang-select {
