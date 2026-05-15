@@ -930,6 +930,16 @@
         .prow-pair > .panel-row {
           flex: 1 1 0;
           min-width: 0;
+          flex-wrap: nowrap;
+        }
+        /* Pair içindeki label sabit, input dar alana sığacak şekilde shrink olsun */
+        .prow-pair > .panel-row > .lbl {
+          flex-shrink: 0;
+        }
+        .prow-pair > .panel-row > input {
+          min-width: 0;
+          flex: 1 1 auto;
+          width: auto;
         }
         /* 4) Günler: 7 gün tek satırda — orta break div'i gizle */
         #prow-days > div[style*="flex-basis"] {
