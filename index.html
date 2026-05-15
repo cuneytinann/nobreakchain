@@ -1863,25 +1863,27 @@
         scrollbar-color: var(--scr-thumb) transparent;
       }
 
-      /* SNAKE MODE: chain-col scrolls, card+grid-wrap are visible */
+      /* SNAKE MODE: chain-card kendi içinde scroll yapsın; alt/üst border görünür kalır */
       .grid-wrap.snake-mode {
         overflow: visible;
         flex: none;
       }
       .chain-card.snake-card {
-        overflow: visible;
-        flex: none;
-      }
-      /* chain-col handles scroll in snake mode */
-      #chain-col.snake-scroll {
         overflow-y: auto;
         overflow-x: hidden;
+        flex: 1 1 auto;
+        min-height: 0;
         scrollbar-color: var(--scr-thumb) transparent;
+      }
+      /* chain-col snake modunda scroll yapmaz — kart kendi içinde scroll yapar */
+      #chain-col.snake-scroll {
+        overflow: hidden;
       }
       /* chain-list in snake: no flex clipping */
       #chain-list.snake-list {
         overflow: visible;
-        flex: none;
+        flex: 1;
+        min-height: 0;
       }
       #chain-list > div:not(.tab-bar) {
         flex: 1;
@@ -1906,15 +1908,16 @@
           overflow: auto;
         }
         .chain-card.snake-card {
-          overflow: visible;
-          max-height: none;
+          overflow-y: auto;
+          height: 80vh;
+          max-height: 80vh;
         }
         .grid-wrap.snake-mode {
           overflow: visible;
         }
         #chain-col.snake-scroll {
-          overflow-y: auto;
-          max-height: 80vh;
+          overflow: hidden;
+          max-height: none;
         }
       }
       .chain-head {
