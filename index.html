@@ -337,6 +337,20 @@
       [data-theme="matrix"] #btn-help {
         letter-spacing: -0.08em;
       }
+      /* Matrix — Courier font geniş; tarih çiftlerinde label+input tek satırda sıkışsın */
+      @media (max-width: 899px) {
+        [data-theme="matrix"] .prow-pair > .panel-row {
+          flex-wrap: nowrap;
+        }
+        [data-theme="matrix"] .prow-pair > .panel-row > .lbl {
+          flex-shrink: 0;
+        }
+        [data-theme="matrix"] .prow-pair > .panel-row > input[type="date"] {
+          min-width: 0;
+          flex: 1 1 auto;
+          width: auto;
+        }
+      }
       /* Matrix: boş hücreler tamamen görünmez */
       [data-theme="matrix"] .chtbl td.empty {
         background: #000;
@@ -930,17 +944,6 @@
         .prow-pair > .panel-row {
           flex: 1 1 0;
           min-width: 0;
-          flex-wrap: nowrap;
-        }
-        /* Pair içindeki label sabit, input dar alana sığacak şekilde shrink olsun */
-        .prow-pair > .panel-row > .lbl {
-          flex-shrink: 0;
-        }
-        /* Yalnızca tarih input'ları geniş alanı paylaşsın; sayı (Satır/Sütun/Hedef/Halka) eski boyutta kalsın */
-        .prow-pair > .panel-row > input[type="date"] {
-          min-width: 0;
-          flex: 1 1 auto;
-          width: auto;
         }
         /* 4) Günler: 7 gün tek satırda — orta break div'i gizle */
         #prow-days > div[style*="flex-basis"] {
@@ -1338,11 +1341,18 @@
         gap: 0.2rem;
         margin-top: 0.18rem;
       }
+      /* Mobilde step-chips inputun yanında değil, alt satırda başlasın */
+      @media (max-width: 899px) {
+        #prow-step .step-chips {
+          flex-basis: 100%;
+          margin-top: 0.35rem;
+        }
+      }
       .step-chip {
         background: var(--pill-chk);
         border: 1px solid var(--pill-bd);
         border-radius: 8px;
-        padding: 0.32rem 0.5rem 0.22rem;
+        padding: 0.22rem 0.38rem 0.14rem;
         font-size: 0.74rem;
         color: var(--inp-color);
         display: inline-flex;
