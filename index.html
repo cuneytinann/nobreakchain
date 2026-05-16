@@ -1,35 +1,41 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="google-site-verification" content="hyckNY_ATq4Vl9ynvRboQ8Ge60B5QeKWAF1VyvTaB1s" />
-    <title>Zinciri Kırma</title>
+    <title>Don't Break the Chain — Habit Tracker</title>
 
     <!-- ── SEO META ── -->
-    <meta name="description" content="Zinciri Kırma — Jerry Seinfeld'in ünlü 'Don't Break the Chain' yöntemiyle alışkanlık takibi. Ücretsiz, kayıt gerekmez, verileriniz sadece sizin tarayıcınızda kalır." />
-    <meta name="keywords" content="zinciri kırma, alışkanlık takip, don't break the chain, habit tracker, üretkenlik, jerry seinfeld, alışkanlık oluşturma" />
-    <meta name="author" content="zincirikirma.org" />
+    <meta name="description" content="Don't Break the Chain — A free habit tracker based on Jerry Seinfeld's famous 'Don't Break the Chain' productivity method. No signup, no ads, your data stays in your browser." />
+    <meta name="keywords" content="don't break the chain, habit tracker, seinfeld method, productivity, daily habits, streak tracker, habit building, free habit tracker, zinciri kırma, alışkanlık takip" />
+    <meta name="author" content="nobreakchain.com" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://zincirikirma.org/" />
+    <link rel="canonical" href="https://nobreakchain.com/" />
+
+    <!-- ── Çoklu dil için hreflang ── -->
+    <link rel="alternate" hreflang="en" href="https://nobreakchain.com/" />
+    <link rel="alternate" hreflang="tr" href="https://nobreakchain.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://nobreakchain.com/" />
 
     <!-- ── Open Graph (Facebook, LinkedIn, WhatsApp) ── -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://zincirikirma.org/" />
-    <meta property="og:title" content="Zinciri Kırma — Alışkanlık Takip" />
-    <meta property="og:description" content="Her gün hedefini tamamla, zinciri kırma. Ücretsiz alışkanlık takip uygulaması." />
-    <meta property="og:image" content="https://zincirikirma.org/og-image.png" />
+    <meta property="og:url" content="https://nobreakchain.com/" />
+    <meta property="og:title" content="Don't Break the Chain — Habit Tracker" />
+    <meta property="og:description" content="Complete your daily goal. Don't break the chain. Free habit tracker. No signup needed." />
+    <meta property="og:image" content="https://nobreakchain.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="tr_TR" />
-    <meta property="og:site_name" content="Zinciri Kırma" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="tr_TR" />
+    <meta property="og:site_name" content="Don't Break the Chain" />
 
     <!-- ── Twitter Card ── -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://zincirikirma.org/" />
-    <meta name="twitter:title" content="Zinciri Kırma — Alışkanlık Takip" />
-    <meta name="twitter:description" content="Her gün hedefini tamamla, zinciri kırma. Ücretsiz alışkanlık takip uygulaması." />
-    <meta name="twitter:image" content="https://zincirikirma.org/og-image.png" />
+    <meta name="twitter:url" content="https://nobreakchain.com/" />
+    <meta name="twitter:title" content="Don't Break the Chain — Habit Tracker" />
+    <meta name="twitter:description" content="Complete your daily goal. Don't break the chain. Free habit tracker. No signup needed." />
+    <meta name="twitter:image" content="https://nobreakchain.com/og-image.png" />
 
     <!-- ── Favicon (her cihaz için) ── -->
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
@@ -47,16 +53,17 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Zinciri Kırma",
-      "url": "https://zincirikirma.org/",
-      "description": "Jerry Seinfeld'in 'Don't Break the Chain' yöntemiyle alışkanlık takip uygulaması.",
+      "name": "Don't Break the Chain",
+      "alternateName": "Zinciri Kırma",
+      "url": "https://nobreakchain.com/",
+      "description": "A habit tracker based on Jerry Seinfeld's 'Don't Break the Chain' method. Track daily streaks, build consistency, free and private.",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Any (Web)",
-      "inLanguage": "tr",
+      "inLanguage": ["en", "tr"],
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "TRY"
+        "priceCurrency": "USD"
       }
     }
     </script>
@@ -3179,7 +3186,16 @@
           if (el) el.textContent = txt;
         }
         (function () {
-          var l = localStorage.getItem(LK) || "tr";
+          var saved = localStorage.getItem(LK);
+          var l;
+          if (saved) {
+            /* Kullanıcı daha önce seçim yapmış — onu kullan */
+            l = saved;
+          } else {
+            /* İlk ziyaret — tarayıcı dilini algıla. TR ise Türkçe, değilse İngilizce */
+            var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+            l = browserLang.startsWith("tr") ? "tr" : "en";
+          }
           lang = l;
           langSelect.value = l;
         })();

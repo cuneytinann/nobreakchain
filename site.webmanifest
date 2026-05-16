@@ -1,7 +1,7 @@
 {
-  "name": "Zinciri Kırma",
-  "short_name": "Zinciri Kırma",
-  "description": "Jerry Seinfeld'in 'Don't Break the Chain' yöntemiyle alışkanlık takip uygulaması.",
+  "name": "Don't Break the Chain",
+  "short_name": "NoBreakChain",
+  "description": "A habit tracker based on Jerry Seinfeld's 'Don't Break the Chain' method. Free, private, no signup.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

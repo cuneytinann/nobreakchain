@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zincirikirma.org/sitemap.xml
+Sitemap: https://nobreakchain.com/sitemap.xml
