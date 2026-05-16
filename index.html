@@ -2859,7 +2859,7 @@
             themeDark: "Karanlık",
             themeNight: "Gece",
             themeMatrix: "Matrix",
-            themeUnicorn: "Unicorn",
+            themeUnicorn: "Aşko Kuşko",
             themeCyberpunk: "Cyberpunk",
             themeRetro: "Retro",
             themeDefter: "Defter",
@@ -3477,6 +3477,8 @@
         var HELP_ID = "__help__";
 
         function buildHelpCard() {
+          var T = t();
+          var isEn = lang === "en";
           var card = document.createElement("div");
           card.className = "chain-card";
           card.dataset.id = HELP_ID;
@@ -3487,12 +3489,15 @@
           meta.className = "chain-meta";
           var title = document.createElement("div");
           title.className = "chain-title";
-          title.textContent = "Zinciri Kırma — Yöntem";
+          title.textContent = isEn
+            ? "Don't Break the Chain — Method"
+            : "Zinciri Kırma — Yöntem";
           var acts = document.createElement("div");
           acts.className = "chain-acts";
           var bclose = document.createElement("button");
           bclose.className = "btn-ca";
-          bclose.innerHTML = '<i class="fa-solid fa-xmark"></i> Kapat';
+          bclose.innerHTML =
+            '<i class="fa-solid fa-xmark"></i> ' + (isEn ? "Close" : "Kapat");
           bclose.addEventListener("click", function () {
             /* help sekmesini tamamen kaldır, ilk zincire geç */
             var s = gs();
@@ -3513,8 +3518,8 @@
           content.className = "grid-wrap help-body";
           content.style.cssText =
             "flex:1;min-height:0;overflow-y:auto;padding:0.5rem 0.2rem;";
-          content.innerHTML =
-            document.getElementById("help-content-tpl").innerHTML;
+          var tplId = isEn ? "help-content-tpl-en" : "help-content-tpl-tr";
+          content.innerHTML = document.getElementById(tplId).innerHTML;
 
           card.appendChild(content);
           return card;
@@ -3671,7 +3676,7 @@
             helpTab.className = "chain-tab active";
             helpTab.dataset.id = HELP_ID;
             helpTab.textContent = "?";
-            helpTab.title = "Yöntem Hakkında";
+            helpTab.title = lang === "en" ? "About the Method" : "Yöntem Hakkında";
             helpTab.addEventListener("click", function () {
               setActive(HELP_ID);
             });
@@ -4733,7 +4738,7 @@
         })();
       })();
     </script>
-    <template id="help-content-tpl">
+    <template id="help-content-tpl-tr">
       <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
         🔗 Zinciri Kırma Yöntemi Nedir?
       </h3>
@@ -4818,6 +4823,95 @@
           Halkaya sağ tıklayarak (veya uzun basarak) not ekleyebilirsiniz.
         </li>
         <li>Yedek al / yükle ile verilerinizi yedekleyin.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-en">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 What is the Don't Break the Chain Method?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        Don't Break the Chain is a productivity and habit-building technique
+        attributed to Jerry Seinfeld. The idea is simple: every day you
+        accomplish your goal, you mark that day. As the days line up, they form
+        a "chain" — and you must not break it.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        How Does It Work?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Pick a goal.</strong> Choose something concrete and doable
+          daily, like "I'll read 30 minutes every day."
+        </li>
+        <li>
+          <strong>Create a calendar or ring list.</strong> In this app you can
+          create date-based or step-based chains.
+        </li>
+        <li>
+          <strong>Do it every day and mark it.</strong> Each day you complete
+          your goal, mark the ring with an ✕.
+        </li>
+        <li>
+          <strong>Don't break the chain.</strong> Consecutive marks become a
+          visual motivator. You won't want to break a long chain.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Why It Works
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Makes small daily steps visible, turning abstract goals into something
+          tangible.
+        </li>
+        <li>
+          Builds a sense of continuity — each new ring adds value to the ones
+          before it.
+        </li>
+        <li>Shifts focus from outcomes to the <em>process</em>.</li>
+        <li>
+          Makes it easier to get back on track after a missed day — a ring may
+          stay empty, but don't abandon the chain entirely.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        App Tips
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Calendar mode:</strong> For habits that repeat on specific
+          days within a date range. Reading, exercise, meditation…
+        </li>
+        <li>
+          <strong>Countable mode:</strong> Set a total goal and number of
+          stages. For a 210-page book, 7 rings → 30 pages per ring.
+        </li>
+        <li>
+          Right-click (or long-press) a ring to add a note.
+        </li>
+        <li>Use Backup / Import to save your data.</li>
       </ul>
     </template>
 
