@@ -117,9 +117,9 @@
         --hr-color: rgb(150, 180, 170);
         --ctitle: rgb(245, 232, 200);
         --cinfo: rgb(220, 215, 200);
-        --prog-bg: rgba(40, 90, 60, 0.15);
-        --prog-fill: rgb(90, 165, 110);
-        --prog-txt: rgb(30, 70, 45);
+        --prog-bg: rgba(60, 70, 65, 0.18);
+        --prog-fill: rgb(200, 205, 200);
+        --prog-txt: rgb(200, 205, 200);
         --note-bg: rgb(252, 246, 220);
         --note-bd: rgb(165, 135, 75);
         --note-color: rgb(40, 30, 15);
@@ -156,8 +156,8 @@
         --page-bg: rgb(24, 24, 26);
         --panel-bg: rgba(40, 55, 50, 0.88);
         --panel-bd: rgba(74, 85, 94, 0.7);
-        --chain-bg: rgba(15, 55, 10, 0.88);
-        --chain-bd: rgba(34, 76, 16, 0.7);
+        --chain-bg: rgba(13, 38, 50, 0.92);
+        --chain-bd: rgba(50, 95, 115, 0.6);
         --tab-idle-bg: rgba(255, 255, 255, 0.07);
         --tab-idle-bd: rgba(255, 255, 255, 0.18);
         --btn-bg: rgb(13, 13, 13);
@@ -206,7 +206,7 @@
         --err-color: rgb(255, 100, 100);
         --err-bg: rgb(50, 30, 10);
         /* ── efekt & bg-chain ── */
-        --bg-chain: rgba(203, 175, 175, 0.2);
+        --bg-chain: rgba(140, 200, 215, 0.18);
         --fx-toggle: rgba(255, 82, 82, 0.5);
         --fx-view: rgba(206, 117, 34, 0.5);
         --fx-add: rgba(87, 87, 87, 0.5);
@@ -3989,11 +3989,12 @@
             var colW = chainCol
               ? chainCol.clientWidth
               : window.innerWidth - 380;
-            /* chain-card padding: 0.7rem*2 ≈ 22px, border 0.5rem*2 ≈ 16px → ~38px */
+            /* chain-card padding: 0.7rem*2 ≈ 22px, border 0.5rem*2 ≈ 16px → ~38px
+               + dikey scrollbar payı (~18px) ki scroll çubuğu kenar halkaları ezmesin */
             var fz =
               parseFloat(getComputedStyle(document.documentElement).fontSize) ||
               16;
-            var cardPad = Math.round(fz * 1.4) + 16;
+            var cardPad = Math.round(fz * 1.4) + 16 + 20;
             /* İç genişlik: toplam - card padding - protrude*2 (her iki yanda köşe payı) */
             var innerW = colW - cardPad - protrude * 2;
             innerW = Math.max(cellW, innerW);
