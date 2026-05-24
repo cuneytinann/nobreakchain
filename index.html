@@ -2484,11 +2484,8 @@
                 <option value="tr">TR</option>
                 <option value="en">EN</option>
                 <option value="hi">HI</option>
-<<<<<<< HEAD
                 <option value="de">DE</option>
                 <option value="nl">NL</option>
-=======
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
               </select>
             </div>
             <div class="top-bar-group" id="top-bar-theme">
@@ -3003,7 +3000,6 @@
             supportLabel: "Support me",
             locale: "en-US",
           },
-<<<<<<< HEAD
           de: {
             kindLbl: "Typ:",
             dated: "Kalender",
@@ -3170,8 +3166,6 @@
             supportLabel: "Steun mij",
             locale: "nl-NL",
           },
-=======
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
           hi: {
             kindLbl: "प्रकार:",
             dated: "कैलेंडर",
@@ -3506,23 +3500,16 @@
             /* Kullanıcı daha önce seçim yapmış — onu kullan */
             l = saved;
           } else {
-<<<<<<< HEAD
             /* İlk ziyaret — tarayıcı diline göre: tr→Türkçe, hi→Hintçe, de→Almanca, nl→Felemenkçe, diğer→İngilizce */
-=======
-            /* İlk ziyaret — tarayıcı diline göre: tr→Türkçe, hi→Hintçe, diğer→İngilizce */
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
             var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
             if (browserLang.startsWith("tr")) {
               l = "tr";
             } else if (browserLang.startsWith("hi")) {
               l = "hi";
-<<<<<<< HEAD
             } else if (browserLang.startsWith("de")) {
               l = "de";
             } else if (browserLang.startsWith("nl")) {
               l = "nl";
-=======
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
             } else {
               l = "en";
             }
@@ -3825,15 +3812,10 @@
             tr: "Zinciri Kırma — Yöntem",
             en: "Don't Break the Chain — Method",
             hi: "चेन मत तोड़ो — विधि",
-<<<<<<< HEAD
             de: "Brich die Kette nicht — Methode",
             nl: "Breek de ketting niet — Methode",
           };
           var closeLabels = { tr: "Kapat", en: "Close", hi: "बंद करें", de: "Schließen", nl: "Sluiten" };
-=======
-          };
-          var closeLabels = { tr: "Kapat", en: "Close", hi: "बंद करें" };
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
           title.textContent = helpTitles[lang] || helpTitles.en;
           var acts = document.createElement("div");
           acts.className = "chain-acts";
@@ -3866,11 +3848,8 @@
             tr: "help-content-tpl-tr",
             en: "help-content-tpl-en",
             hi: "help-content-tpl-hi",
-<<<<<<< HEAD
             de: "help-content-tpl-de",
             nl: "help-content-tpl-nl",
-=======
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
           };
           var tplId = tplMap[lang] || tplMap.en;
           content.innerHTML = document.getElementById(tplId).innerHTML;
@@ -4034,11 +4013,8 @@
               tr: "Yöntem Hakkında",
               en: "About the Method",
               hi: "विधि के बारे में",
-<<<<<<< HEAD
               de: "Über die Methode",
               nl: "Over de methode",
-=======
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
             };
             helpTab.title = helpTabTitles[lang] || helpTabTitles.en;
             helpTab.addEventListener("click", function () {
@@ -5367,7 +5343,6 @@
       </ul>
     </template>
 
-<<<<<<< HEAD
     <template id="help-content-tpl-de">
       <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
         🔗 Was ist die „Brich die Kette nicht"-Methode?
@@ -5559,8 +5534,6 @@
       </ul>
     </template>
 
-=======
->>>>>>> 6151443740d8cfda5772927b8fa6673021e8f35c
     <!-- Vercel Web Analytics + Speed Insights (vanilla HTML için resmi script versiyonu) -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
