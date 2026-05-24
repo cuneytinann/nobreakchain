@@ -2469,6 +2469,41 @@
           font-weight: bold;
         }
       }
+
+      /* ── RTL (sağdan sola: Arapça, Farsça, Urduca vb.) ──
+         dir="rtl" çoğu şeyi (flex sırası, metin hizası) otomatik aynalar.
+         Aşağıda yalnızca asimetrik kenarlıkları/boşlukları düzeltiyoruz. */
+      [dir="rtl"] #top-bar-lang {
+        border-right: none;
+        border-left: 1px solid var(--hr-color);
+      }
+      [dir="rtl"] .top-bar-controls {
+        padding-left: 0;
+        padding-right: 0.3rem;
+      }
+      [dir="rtl"] #chain-col {
+        padding-left: 0;
+        padding-right: 0.5rem;
+      }
+      [dir="rtl"] .help-body ol,
+      [dir="rtl"] .help-body ul {
+        padding-left: 0;
+        padding-right: 1.2rem;
+      }
+      /* Sayısal göstergeler ve tarih alanları LTR kalmalı (karışmasın) */
+      [dir="rtl"] input[type="date"],
+      [dir="rtl"] input[type="number"],
+      [dir="rtl"] .s-select {
+        direction: ltr;
+        text-align: right;
+      }
+      /* Mobil footer: RTL'de sol/sağ otomatik yer değiştirir, justify-self düzelt */
+      [dir="rtl"] .footer-mobile-left {
+        justify-self: end;
+      }
+      [dir="rtl"] .footer-mobile-right {
+        justify-self: start;
+      }
     </style>
   </head>
   <body>
@@ -2486,6 +2521,20 @@
                 <option value="hi">HI</option>
                 <option value="de">DE</option>
                 <option value="nl">NL</option>
+                <option value="fr">FR</option>
+                <option value="it">IT</option>
+                <option value="es">ES</option>
+                <option value="pt">PT</option>
+                <option value="la">LA</option>
+                <option value="ar">AR</option>
+                <option value="fa">FA</option>
+                <option value="ur">UR</option>
+                <option value="ru">RU</option>
+                <option value="zh">ZH</option>
+                <option value="ja">JA</option>
+                <option value="ko">KO</option>
+                <option value="az">AZ</option>
+                <option value="bn">BN</option>
               </select>
             </div>
             <div class="top-bar-group" id="top-bar-theme">
@@ -3166,6 +3215,1171 @@
             supportLabel: "Steun mij",
             locale: "nl-NL",
           },
+          fr: {
+            kindLbl: "Type :",
+            dated: "Calendrier",
+            count: "Par quantité",
+            goalLbl: "Mon objectif :",
+            goalPH: "Je lis 1 heure chaque jour !",
+            goalPHcount: "Je vais lire un livre de 210 pages !",
+            startLbl: "Début :",
+            endLbl: "Fin :",
+            daysLbl: "Jours :",
+            totalLbl: "Objectif :",
+            stepLbl: "Étapes personnalisées :",
+            stepPH: "facultatif : 30,80,120,...",
+            ringsCountLbl: "Anneaux :",
+            rowLbl: "Lignes :",
+            colLbl: "Colonnes :",
+            ringLbl: "Total d'anneaux :",
+            ringHint: "anneaux",
+            btnAdd: "Créer",
+            btnLoad: "Importer",
+            btnDl: "Sauvegarde",
+            btnReset: "Effacer",
+            errName: "Le nom de la chaîne est requis.",
+            errNameDup: "Une chaîne portant ce nom existe déjà.",
+            errNameReserved: "Ce nom de chaîne n'est pas autorisé.",
+            errAtLeast: "Choisissez au moins 1 jour.",
+            dayNames: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+            dayNamesFull: [
+              "Dimanche",
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Progression : " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Anneaux : " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Total : " + t + "&nbsp;|&nbsp;Étapes : " + ms;
+            },
+            delConfirm: "Supprimer cette chaîne ?",
+            noteTitle: "Note",
+            notePH: "Écrivez une note pour cet anneau...",
+            noteOk: "Enregistrer",
+            noteCancel: "Annuler",
+            noteClear: "Supprimer la note",
+            noChain: "Aucune chaîne à télécharger.",
+            badJson: "Format JSON invalide.",
+            badFile: "Fichier invalide : ",
+            loadOk: "Sauvegarde chargée avec succès.",
+            viewTable: "Tableau",
+            viewSnake: "Serpent",
+            appTitle: "Ne brise pas la chaîne !",
+            chainBtnDel: "Supprimer",
+            chainBtnNote: "Note",
+            notesSummary: "Notes",
+            notesSummaryRings: "anneaux",
+            layoutPrefix: "Disposition :",
+            layoutRows: "lignes",
+            layoutCols: "colonnes",
+            layoutTotal: "cellules au total",
+            layoutEmpty: "cellules vides :",
+            layoutEmptySuffix: "",
+            topBarLang: "Langue",
+            topBarTheme: "Thème",
+            themeDefault: "Par défaut",
+            themeDark: "Sombre",
+            themeNight: "Nuit",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Licorne",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Rétro",
+            themeDefter: "Carnet",
+            chainTabLabel: "Chaîne",
+            supportLabel: "Soutenir",
+            locale: "fr-FR",
+          },
+          it: {
+            kindLbl: "Tipo:",
+            dated: "Calendario",
+            count: "A quantità",
+            goalLbl: "Il mio obiettivo:",
+            goalPH: "Leggo 1 ora ogni giorno!",
+            goalPHcount: "Leggerò un libro di 210 pagine!",
+            startLbl: "Inizio:",
+            endLbl: "Fine:",
+            daysLbl: "Giorni:",
+            totalLbl: "Obiettivo:",
+            stepLbl: "Passi personalizzati:",
+            stepPH: "facoltativo: 30,80,120,...",
+            ringsCountLbl: "Anelli:",
+            rowLbl: "Righe:",
+            colLbl: "Colonne:",
+            ringLbl: "Anelli totali:",
+            ringHint: "anelli",
+            btnAdd: "Crea",
+            btnLoad: "Importa",
+            btnDl: "Backup",
+            btnReset: "Svuota",
+            errName: "Il nome della catena è obbligatorio.",
+            errNameDup: "Esiste già una catena con questo nome.",
+            errNameReserved: "Questo nome di catena non è consentito.",
+            errAtLeast: "Scegli almeno 1 giorno.",
+            dayNames: ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+            dayNamesFull: [
+              "Domenica",
+              "Lunedì",
+              "Martedì",
+              "Mercoledì",
+              "Giovedì",
+              "Venerdì",
+              "Sabato",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Progresso: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Anelli: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Totale: " + t + "&nbsp;|&nbsp;Tappe: " + ms;
+            },
+            delConfirm: "Eliminare questa catena?",
+            noteTitle: "Nota",
+            notePH: "Scrivi una nota per questo anello...",
+            noteOk: "Salva",
+            noteCancel: "Annulla",
+            noteClear: "Elimina nota",
+            noChain: "Nessuna catena da scaricare.",
+            badJson: "Formato JSON non valido.",
+            badFile: "File non valido: ",
+            loadOk: "Backup caricato con successo.",
+            viewTable: "Tabella",
+            viewSnake: "Serpente",
+            appTitle: "Non spezzare la catena!",
+            chainBtnDel: "Elimina",
+            chainBtnNote: "Nota",
+            notesSummary: "Note",
+            notesSummaryRings: "anelli",
+            layoutPrefix: "Disposizione:",
+            layoutRows: "righe",
+            layoutCols: "colonne",
+            layoutTotal: "celle totali",
+            layoutEmpty: "celle vuote:",
+            layoutEmptySuffix: "",
+            topBarLang: "Lingua",
+            topBarTheme: "Tema",
+            themeDefault: "Predefinito",
+            themeDark: "Scuro",
+            themeNight: "Notte",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Unicorno",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Retrò",
+            themeDefter: "Quaderno",
+            chainTabLabel: "Catena",
+            supportLabel: "Sostieni",
+            locale: "it-IT",
+          },
+          es: {
+            kindLbl: "Tipo:",
+            dated: "Calendario",
+            count: "Por cantidad",
+            goalLbl: "Mi objetivo:",
+            goalPH: "¡Leo 1 hora cada día!",
+            goalPHcount: "¡Voy a leer un libro de 210 páginas!",
+            startLbl: "Inicio:",
+            endLbl: "Fin:",
+            daysLbl: "Días:",
+            totalLbl: "Objetivo:",
+            stepLbl: "Pasos personalizados:",
+            stepPH: "opcional: 30,80,120,...",
+            ringsCountLbl: "Anillos:",
+            rowLbl: "Filas:",
+            colLbl: "Columnas:",
+            ringLbl: "Anillos en total:",
+            ringHint: "anillos",
+            btnAdd: "Crear",
+            btnLoad: "Importar",
+            btnDl: "Copia",
+            btnReset: "Vaciar",
+            errName: "El nombre de la cadena es obligatorio.",
+            errNameDup: "Ya existe una cadena con este nombre.",
+            errNameReserved: "Este nombre de cadena no está permitido.",
+            errAtLeast: "Elige al menos 1 día.",
+            dayNames: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+            dayNamesFull: [
+              "Domingo",
+              "Lunes",
+              "Martes",
+              "Miércoles",
+              "Jueves",
+              "Viernes",
+              "Sábado",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Progreso: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Anillos: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Total: " + t + "&nbsp;|&nbsp;Etapas: " + ms;
+            },
+            delConfirm: "¿Eliminar esta cadena?",
+            noteTitle: "Nota",
+            notePH: "Escribe una nota para este anillo...",
+            noteOk: "Guardar",
+            noteCancel: "Cancelar",
+            noteClear: "Eliminar nota",
+            noChain: "No hay ninguna cadena para descargar.",
+            badJson: "Formato JSON no válido.",
+            badFile: "Archivo no válido: ",
+            loadOk: "Copia de seguridad cargada correctamente.",
+            viewTable: "Tabla",
+            viewSnake: "Serpiente",
+            appTitle: "¡No rompas la cadena!",
+            chainBtnDel: "Eliminar",
+            chainBtnNote: "Nota",
+            notesSummary: "Notas",
+            notesSummaryRings: "anillos",
+            layoutPrefix: "Disposición:",
+            layoutRows: "filas",
+            layoutCols: "columnas",
+            layoutTotal: "celdas en total",
+            layoutEmpty: "celdas vacías:",
+            layoutEmptySuffix: "",
+            topBarLang: "Idioma",
+            topBarTheme: "Tema",
+            themeDefault: "Predeterminado",
+            themeDark: "Oscuro",
+            themeNight: "Noche",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Unicornio",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Retro",
+            themeDefter: "Cuaderno",
+            chainTabLabel: "Cadena",
+            supportLabel: "Apóyame",
+            locale: "es-ES",
+          },
+          pt: {
+            kindLbl: "Tipo:",
+            dated: "Calendário",
+            count: "Por quantidade",
+            goalLbl: "Meu objetivo:",
+            goalPH: "Leio 1 hora todos os dias!",
+            goalPHcount: "Vou ler um livro de 210 páginas!",
+            startLbl: "Início:",
+            endLbl: "Fim:",
+            daysLbl: "Dias:",
+            totalLbl: "Objetivo:",
+            stepLbl: "Etapas personalizadas:",
+            stepPH: "opcional: 30,80,120,...",
+            ringsCountLbl: "Anéis:",
+            rowLbl: "Linhas:",
+            colLbl: "Colunas:",
+            ringLbl: "Total de anéis:",
+            ringHint: "anéis",
+            btnAdd: "Criar",
+            btnLoad: "Importar",
+            btnDl: "Backup",
+            btnReset: "Limpar",
+            errName: "O nome da corrente é obrigatório.",
+            errNameDup: "Já existe uma corrente com este nome.",
+            errNameReserved: "Este nome de corrente não é permitido.",
+            errAtLeast: "Escolha pelo menos 1 dia.",
+            dayNames: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+            dayNamesFull: [
+              "Domingo",
+              "Segunda-feira",
+              "Terça-feira",
+              "Quarta-feira",
+              "Quinta-feira",
+              "Sexta-feira",
+              "Sábado",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Progresso: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Anéis: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Total: " + t + "&nbsp;|&nbsp;Etapas: " + ms;
+            },
+            delConfirm: "Excluir esta corrente?",
+            noteTitle: "Nota",
+            notePH: "Escreva uma nota para este anel...",
+            noteOk: "Salvar",
+            noteCancel: "Cancelar",
+            noteClear: "Excluir nota",
+            noChain: "Nenhuma corrente para baixar.",
+            badJson: "Formato JSON inválido.",
+            badFile: "Arquivo inválido: ",
+            loadOk: "Backup carregado com sucesso.",
+            viewTable: "Tabela",
+            viewSnake: "Cobra",
+            appTitle: "Não quebre a corrente!",
+            chainBtnDel: "Excluir",
+            chainBtnNote: "Nota",
+            notesSummary: "Notas",
+            notesSummaryRings: "anéis",
+            layoutPrefix: "Layout:",
+            layoutRows: "linhas",
+            layoutCols: "colunas",
+            layoutTotal: "células no total",
+            layoutEmpty: "células vazias:",
+            layoutEmptySuffix: "",
+            topBarLang: "Idioma",
+            topBarTheme: "Tema",
+            themeDefault: "Padrão",
+            themeDark: "Escuro",
+            themeNight: "Noite",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Unicórnio",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Retrô",
+            themeDefter: "Caderno",
+            chainTabLabel: "Corrente",
+            supportLabel: "Apoie",
+            locale: "pt-BR",
+          },
+          la: {
+            kindLbl: "Genus:",
+            dated: "Calendarium",
+            count: "Per numerum",
+            goalLbl: "Propositum meum:",
+            goalPH: "Cotidie unam horam legam!",
+            goalPHcount: "Librum ducentarum decem paginarum legam!",
+            startLbl: "Initium:",
+            endLbl: "Finis:",
+            daysLbl: "Dies:",
+            totalLbl: "Propositum:",
+            stepLbl: "Gradus proprii:",
+            stepPH: "ad libitum: 30,80,120,...",
+            ringsCountLbl: "Anuli:",
+            rowLbl: "Ordines:",
+            colLbl: "Columnae:",
+            ringLbl: "Anuli in summa:",
+            ringHint: "anuli",
+            btnAdd: "Creare",
+            btnLoad: "Importare",
+            btnDl: "Conservare",
+            btnReset: "Vacuare",
+            errName: "Nomen catenae necessarium est.",
+            errNameDup: "Catena hoc nomine iam exstat.",
+            errNameReserved: "Hoc nomen catenae non licet.",
+            errAtLeast: "Elige saltem unum diem.",
+            dayNames: ["Sol", "Lun", "Mar", "Mer", "Iov", "Ven", "Sat"],
+            dayNamesFull: [
+              "Dies Solis",
+              "Dies Lunae",
+              "Dies Martis",
+              "Dies Mercurii",
+              "Dies Iovis",
+              "Dies Veneris",
+              "Dies Saturni",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Progressus: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Anuli: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Summa: " + t + "&nbsp;|&nbsp;Gradus: " + ms;
+            },
+            delConfirm: "Hanc catenam delere?",
+            noteTitle: "Nota",
+            notePH: "Notam pro hoc anulo scribe...",
+            noteOk: "Servare",
+            noteCancel: "Renuntiare",
+            noteClear: "Notam delere",
+            noChain: "Nulla catena ad demittendum.",
+            badJson: "Forma JSON invalida.",
+            badFile: "Plica invalida: ",
+            loadOk: "Exemplar feliciter oneratum.",
+            viewTable: "Tabula",
+            viewSnake: "Serpens",
+            appTitle: "Noli catenam frangere!",
+            chainBtnDel: "Delere",
+            chainBtnNote: "Nota",
+            notesSummary: "Notae",
+            notesSummaryRings: "anulis",
+            layoutPrefix: "Dispositio:",
+            layoutRows: "ordines",
+            layoutCols: "columnae",
+            layoutTotal: "cellae in summa",
+            layoutEmpty: "cellae vacuae:",
+            layoutEmptySuffix: "",
+            topBarLang: "Lingua",
+            topBarTheme: "Habitus",
+            themeDefault: "Solitum",
+            themeDark: "Obscurum",
+            themeNight: "Nox",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Monoceros",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Retro",
+            themeDefter: "Codex",
+            chainTabLabel: "Catena",
+            supportLabel: "Adiuva me",
+            locale: "la",
+          },
+          ar: {
+            kindLbl: "النوع:",
+            dated: "تقويم",
+            count: "حسب الكمية",
+            goalLbl: "هدفي:",
+            goalPH: "سأقرأ ساعة واحدة كل يوم!",
+            goalPHcount: "سأقرأ كتابًا من ٢١٠ صفحات!",
+            startLbl: "البداية:",
+            endLbl: "النهاية:",
+            daysLbl: "الأيام:",
+            totalLbl: "الهدف:",
+            stepLbl: "خطوات مخصصة:",
+            stepPH: "اختياري: 30,80,120,...",
+            ringsCountLbl: "الحلقات:",
+            rowLbl: "الصفوف:",
+            colLbl: "الأعمدة:",
+            ringLbl: "إجمالي الحلقات:",
+            ringHint: "حلقات",
+            btnAdd: "إنشاء",
+            btnLoad: "استيراد",
+            btnDl: "نسخة احتياطية",
+            btnReset: "مسح",
+            errName: "اسم السلسلة مطلوب.",
+            errNameDup: "توجد سلسلة بهذا الاسم بالفعل.",
+            errNameReserved: "اسم السلسلة هذا غير مسموح به.",
+            errAtLeast: "اختر يومًا واحدًا على الأقل.",
+            dayNames: ["أحد", "إثن", "ثلا", "أرب", "خمي", "جمع", "سبت"],
+            dayNamesFull: [
+              "الأحد",
+              "الاثنين",
+              "الثلاثاء",
+              "الأربعاء",
+              "الخميس",
+              "الجمعة",
+              "السبت",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "التقدم: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "الحلقات: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "الإجمالي: " + t + "&nbsp;|&nbsp;المراحل: " + ms;
+            },
+            delConfirm: "حذف هذه السلسلة؟",
+            noteTitle: "ملاحظة",
+            notePH: "اكتب ملاحظة لهذه الحلقة...",
+            noteOk: "حفظ",
+            noteCancel: "إلغاء",
+            noteClear: "حذف الملاحظة",
+            noChain: "لا توجد سلسلة للتنزيل.",
+            badJson: "تنسيق JSON غير صالح.",
+            badFile: "ملف غير صالح: ",
+            loadOk: "تم تحميل النسخة الاحتياطية بنجاح.",
+            viewTable: "جدول",
+            viewSnake: "ثعبان",
+            appTitle: "لا تكسر السلسلة!",
+            chainBtnDel: "حذف",
+            chainBtnNote: "ملاحظة",
+            notesSummary: "ملاحظات",
+            notesSummaryRings: "حلقات",
+            layoutPrefix: "التخطيط:",
+            layoutRows: "صفوف",
+            layoutCols: "أعمدة",
+            layoutTotal: "إجمالي الخلايا",
+            layoutEmpty: "خلايا فارغة:",
+            layoutEmptySuffix: "",
+            topBarLang: "اللغة",
+            topBarTheme: "السمة",
+            themeDefault: "افتراضي",
+            themeDark: "داكن",
+            themeNight: "ليلي",
+            themeMatrix: "ماتريكس",
+            themeUnicorn: "أحادي القرن",
+            themeCyberpunk: "سايبربانك",
+            themeRetro: "ريترو",
+            themeDefter: "دفتر",
+            chainTabLabel: "سلسلة",
+            supportLabel: "ادعمني",
+            locale: "ar",
+            rtl: true,
+          },
+          fa: {
+            kindLbl: "نوع:",
+            dated: "تقویمی",
+            count: "بر اساس تعداد",
+            goalLbl: "هدف من:",
+            goalPH: "هر روز یک ساعت کتاب می‌خوانم!",
+            goalPHcount: "یک کتاب ۲۱۰ صفحه‌ای می‌خوانم!",
+            startLbl: "شروع:",
+            endLbl: "پایان:",
+            daysLbl: "روزها:",
+            totalLbl: "هدف:",
+            stepLbl: "گام‌های سفارشی:",
+            stepPH: "اختیاری: 30,80,120,...",
+            ringsCountLbl: "حلقه‌ها:",
+            rowLbl: "ردیف‌ها:",
+            colLbl: "ستون‌ها:",
+            ringLbl: "مجموع حلقه‌ها:",
+            ringHint: "حلقه",
+            btnAdd: "ایجاد",
+            btnLoad: "وارد کردن",
+            btnDl: "پشتیبان",
+            btnReset: "پاک کردن",
+            errName: "نام زنجیره الزامی است.",
+            errNameDup: "زنجیره‌ای با این نام از قبل وجود دارد.",
+            errNameReserved: "این نام زنجیره مجاز نیست.",
+            errAtLeast: "حداقل ۱ روز را انتخاب کنید.",
+            dayNames: ["یک", "دو", "سه", "چهار", "پنج", "جمعه", "شنبه"],
+            dayNamesFull: [
+              "یکشنبه",
+              "دوشنبه",
+              "سه‌شنبه",
+              "چهارشنبه",
+              "پنجشنبه",
+              "جمعه",
+              "شنبه",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "پیشرفت: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "حلقه‌ها: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "مجموع: " + t + "&nbsp;|&nbsp;مراحل: " + ms;
+            },
+            delConfirm: "این زنجیره حذف شود؟",
+            noteTitle: "یادداشت",
+            notePH: "برای این حلقه یادداشتی بنویسید...",
+            noteOk: "ذخیره",
+            noteCancel: "لغو",
+            noteClear: "حذف یادداشت",
+            noChain: "هیچ زنجیره‌ای برای دانلود نیست.",
+            badJson: "قالب JSON نامعتبر است.",
+            badFile: "فایل نامعتبر: ",
+            loadOk: "پشتیبان با موفقیت بارگذاری شد.",
+            viewTable: "جدول",
+            viewSnake: "مار",
+            appTitle: "زنجیر را نشکن!",
+            chainBtnDel: "حذف",
+            chainBtnNote: "یادداشت",
+            notesSummary: "یادداشت‌ها",
+            notesSummaryRings: "حلقه",
+            layoutPrefix: "چیدمان:",
+            layoutRows: "ردیف",
+            layoutCols: "ستون",
+            layoutTotal: "مجموع خانه‌ها",
+            layoutEmpty: "خانه‌های خالی:",
+            layoutEmptySuffix: "",
+            topBarLang: "زبان",
+            topBarTheme: "پوسته",
+            themeDefault: "پیش‌فرض",
+            themeDark: "تیره",
+            themeNight: "شب",
+            themeMatrix: "ماتریکس",
+            themeUnicorn: "تک‌شاخ",
+            themeCyberpunk: "سایبرپانک",
+            themeRetro: "رترو",
+            themeDefter: "دفترچه",
+            chainTabLabel: "زنجیره",
+            supportLabel: "حمایت کنید",
+            locale: "fa",
+            rtl: true,
+          },
+          ur: {
+            kindLbl: "قسم:",
+            dated: "کیلنڈر",
+            count: "تعداد کے حساب سے",
+            goalLbl: "میرا مقصد:",
+            goalPH: "میں ہر روز ایک گھنٹہ پڑھوں گا!",
+            goalPHcount: "میں ۲۱۰ صفحات کی کتاب پڑھوں گا!",
+            startLbl: "آغاز:",
+            endLbl: "اختتام:",
+            daysLbl: "دن:",
+            totalLbl: "مقصد:",
+            stepLbl: "حسبِ ضرورت مراحل:",
+            stepPH: "اختیاری: 30,80,120,...",
+            ringsCountLbl: "حلقے:",
+            rowLbl: "قطاریں:",
+            colLbl: "کالم:",
+            ringLbl: "کل حلقے:",
+            ringHint: "حلقے",
+            btnAdd: "بنائیں",
+            btnLoad: "درآمد",
+            btnDl: "بیک اپ",
+            btnReset: "صاف کریں",
+            errName: "زنجیر کا نام ضروری ہے۔",
+            errNameDup: "اس نام کی زنجیر پہلے سے موجود ہے۔",
+            errNameReserved: "یہ زنجیر کا نام استعمال نہیں ہو سکتا۔",
+            errAtLeast: "کم از کم ۱ دن منتخب کریں۔",
+            dayNames: ["اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"],
+            dayNamesFull: [
+              "اتوار",
+              "پیر",
+              "منگل",
+              "بدھ",
+              "جمعرات",
+              "جمعہ",
+              "ہفتہ",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "پیش رفت: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "حلقے: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "کل: " + t + "&nbsp;|&nbsp;مراحل: " + ms;
+            },
+            delConfirm: "کیا یہ زنجیر حذف کریں؟",
+            noteTitle: "نوٹ",
+            notePH: "اس حلقے کے لیے ایک نوٹ لکھیں...",
+            noteOk: "محفوظ کریں",
+            noteCancel: "منسوخ",
+            noteClear: "نوٹ حذف کریں",
+            noChain: "ڈاؤن لوڈ کرنے کے لیے کوئی زنجیر نہیں۔",
+            badJson: "غلط JSON فارمیٹ۔",
+            badFile: "غلط فائل: ",
+            loadOk: "بیک اپ کامیابی سے لوڈ ہو گیا۔",
+            viewTable: "ٹیبل",
+            viewSnake: "سانپ",
+            appTitle: "زنجیر مت توڑو!",
+            chainBtnDel: "حذف",
+            chainBtnNote: "نوٹ",
+            notesSummary: "نوٹس",
+            notesSummaryRings: "حلقوں میں",
+            layoutPrefix: "خاکہ:",
+            layoutRows: "قطاریں",
+            layoutCols: "کالم",
+            layoutTotal: "کل خانے",
+            layoutEmpty: "خالی خانے:",
+            layoutEmptySuffix: "",
+            topBarLang: "زبان",
+            topBarTheme: "تھیم",
+            themeDefault: "طے شدہ",
+            themeDark: "گہرا",
+            themeNight: "رات",
+            themeMatrix: "میٹرکس",
+            themeUnicorn: "یونی کورن",
+            themeCyberpunk: "سائبر پنک",
+            themeRetro: "ریٹرو",
+            themeDefter: "نوٹ بک",
+            chainTabLabel: "زنجیر",
+            supportLabel: "میری مدد کریں",
+            locale: "ur",
+            rtl: true,
+          },
+          ru: {
+            kindLbl: "Тип:",
+            dated: "Календарь",
+            count: "По количеству",
+            goalLbl: "Моя цель:",
+            goalPH: "Буду читать 1 час каждый день!",
+            goalPHcount: "Прочитаю книгу в 210 страниц!",
+            startLbl: "Начало:",
+            endLbl: "Конец:",
+            daysLbl: "Дни:",
+            totalLbl: "Цель:",
+            stepLbl: "Свои этапы:",
+            stepPH: "необязательно: 30,80,120,...",
+            ringsCountLbl: "Звенья:",
+            rowLbl: "Строки:",
+            colLbl: "Столбцы:",
+            ringLbl: "Всего звеньев:",
+            ringHint: "звеньев",
+            btnAdd: "Создать",
+            btnLoad: "Импорт",
+            btnDl: "Резерв",
+            btnReset: "Очистить",
+            errName: "Требуется название цепи.",
+            errNameDup: "Цепь с таким названием уже существует.",
+            errNameReserved: "Это название цепи недопустимо.",
+            errAtLeast: "Выберите хотя бы 1 день.",
+            dayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            dayNamesFull: [
+              "Воскресенье",
+              "Понедельник",
+              "Вторник",
+              "Среда",
+              "Четверг",
+              "Пятница",
+              "Суббота",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Прогресс: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Звенья: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Всего: " + t + "&nbsp;|&nbsp;Этапы: " + ms;
+            },
+            delConfirm: "Удалить эту цепь?",
+            noteTitle: "Заметка",
+            notePH: "Напишите заметку для этого звена...",
+            noteOk: "Сохранить",
+            noteCancel: "Отмена",
+            noteClear: "Удалить заметку",
+            noChain: "Нет цепи для скачивания.",
+            badJson: "Неверный формат JSON.",
+            badFile: "Неверный файл: ",
+            loadOk: "Резервная копия успешно загружена.",
+            viewTable: "Таблица",
+            viewSnake: "Змейка",
+            appTitle: "Не разрывай цепь!",
+            chainBtnDel: "Удалить",
+            chainBtnNote: "Заметка",
+            notesSummary: "Заметки",
+            notesSummaryRings: "звеньях",
+            layoutPrefix: "Раскладка:",
+            layoutRows: "строк",
+            layoutCols: "столбцов",
+            layoutTotal: "ячеек всего",
+            layoutEmpty: "пустых ячеек:",
+            layoutEmptySuffix: "",
+            topBarLang: "Язык",
+            topBarTheme: "Тема",
+            themeDefault: "Стандарт",
+            themeDark: "Тёмная",
+            themeNight: "Ночь",
+            themeMatrix: "Матрица",
+            themeUnicorn: "Единорог",
+            themeCyberpunk: "Киберпанк",
+            themeRetro: "Ретро",
+            themeDefter: "Блокнот",
+            chainTabLabel: "Цепь",
+            supportLabel: "Поддержать",
+            locale: "ru-RU",
+          },
+          zh: {
+            kindLbl: "类型：",
+            dated: "日历",
+            count: "按数量",
+            goalLbl: "我的目标：",
+            goalPH: "我每天读一小时书！",
+            goalPHcount: "我要读完一本210页的书！",
+            startLbl: "开始：",
+            endLbl: "结束：",
+            daysLbl: "星期：",
+            totalLbl: "目标：",
+            stepLbl: "自定义阶段：",
+            stepPH: "可选：30,80,120,...",
+            ringsCountLbl: "环数：",
+            rowLbl: "行：",
+            colLbl: "列：",
+            ringLbl: "总环数：",
+            ringHint: "环",
+            btnAdd: "创建",
+            btnLoad: "导入",
+            btnDl: "备份",
+            btnReset: "清空",
+            errName: "链条名称为必填项。",
+            errNameDup: "已存在同名链条。",
+            errNameReserved: "此链条名称不可用。",
+            errAtLeast: "请至少选择 1 天。",
+            dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+            dayNamesFull: [
+              "星期日",
+              "星期一",
+              "星期二",
+              "星期三",
+              "星期四",
+              "星期五",
+              "星期六",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "进度：" + d + "/" + t + "（" + p + "%）";
+            },
+            chainInfo: function (n, f, l) {
+              return "环数：" + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "总计：" + t + "&nbsp;|&nbsp;阶段：" + ms;
+            },
+            delConfirm: "删除这条链条？",
+            noteTitle: "备注",
+            notePH: "为这个环写一条备注……",
+            noteOk: "保存",
+            noteCancel: "取消",
+            noteClear: "删除备注",
+            noChain: "没有可下载的链条。",
+            badJson: "JSON 格式无效。",
+            badFile: "文件无效：",
+            loadOk: "备份已成功载入。",
+            viewTable: "表格",
+            viewSnake: "蛇形",
+            appTitle: "不要断链！",
+            chainBtnDel: "删除",
+            chainBtnNote: "备注",
+            notesSummary: "备注",
+            notesSummaryRings: "个环",
+            layoutPrefix: "布局：",
+            layoutRows: "行",
+            layoutCols: "列",
+            layoutTotal: "总格数",
+            layoutEmpty: "空格数：",
+            layoutEmptySuffix: "",
+            topBarLang: "语言",
+            topBarTheme: "主题",
+            themeDefault: "默认",
+            themeDark: "深色",
+            themeNight: "夜间",
+            themeMatrix: "矩阵",
+            themeUnicorn: "独角兽",
+            themeCyberpunk: "赛博朋克",
+            themeRetro: "复古",
+            themeDefter: "笔记本",
+            chainTabLabel: "链条",
+            supportLabel: "支持我",
+            locale: "zh-CN",
+          },
+          ja: {
+            kindLbl: "種類：",
+            dated: "カレンダー",
+            count: "数で",
+            goalLbl: "私の目標：",
+            goalPH: "毎日1時間読書します！",
+            goalPHcount: "210ページの本を読みます！",
+            startLbl: "開始：",
+            endLbl: "終了：",
+            daysLbl: "曜日：",
+            totalLbl: "目標：",
+            stepLbl: "カスタム段階：",
+            stepPH: "任意：30,80,120,...",
+            ringsCountLbl: "リング：",
+            rowLbl: "行：",
+            colLbl: "列：",
+            ringLbl: "リング合計：",
+            ringHint: "リング",
+            btnAdd: "作成",
+            btnLoad: "読み込み",
+            btnDl: "バックアップ",
+            btnReset: "クリア",
+            errName: "チェーン名は必須です。",
+            errNameDup: "同じ名前のチェーンが既に存在します。",
+            errNameReserved: "このチェーン名は使用できません。",
+            errAtLeast: "少なくとも1日を選択してください。",
+            dayNames: ["日", "月", "火", "水", "木", "金", "土"],
+            dayNamesFull: [
+              "日曜日",
+              "月曜日",
+              "火曜日",
+              "水曜日",
+              "木曜日",
+              "金曜日",
+              "土曜日",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "進捗：" + d + "/" + t + "（" + p + "%）";
+            },
+            chainInfo: function (n, f, l) {
+              return "リング：" + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "合計：" + t + "&nbsp;|&nbsp;段階：" + ms;
+            },
+            delConfirm: "このチェーンを削除しますか？",
+            noteTitle: "メモ",
+            notePH: "このリングのメモを書いてください……",
+            noteOk: "保存",
+            noteCancel: "キャンセル",
+            noteClear: "メモを削除",
+            noChain: "ダウンロードできるチェーンがありません。",
+            badJson: "JSON形式が無効です。",
+            badFile: "無効なファイル：",
+            loadOk: "バックアップを正常に読み込みました。",
+            viewTable: "表",
+            viewSnake: "スネーク",
+            appTitle: "チェーンを切らさない！",
+            chainBtnDel: "削除",
+            chainBtnNote: "メモ",
+            notesSummary: "メモ",
+            notesSummaryRings: "個のリング",
+            layoutPrefix: "レイアウト：",
+            layoutRows: "行",
+            layoutCols: "列",
+            layoutTotal: "セル合計",
+            layoutEmpty: "空のセル：",
+            layoutEmptySuffix: "",
+            topBarLang: "言語",
+            topBarTheme: "テーマ",
+            themeDefault: "標準",
+            themeDark: "ダーク",
+            themeNight: "ナイト",
+            themeMatrix: "マトリックス",
+            themeUnicorn: "ユニコーン",
+            themeCyberpunk: "サイバーパンク",
+            themeRetro: "レトロ",
+            themeDefter: "ノート",
+            chainTabLabel: "チェーン",
+            supportLabel: "応援する",
+            locale: "ja-JP",
+          },
+          ko: {
+            kindLbl: "유형:",
+            dated: "달력",
+            count: "개수로",
+            goalLbl: "내 목표:",
+            goalPH: "매일 1시간씩 책을 읽겠습니다!",
+            goalPHcount: "210쪽짜리 책을 읽겠습니다!",
+            startLbl: "시작:",
+            endLbl: "종료:",
+            daysLbl: "요일:",
+            totalLbl: "목표:",
+            stepLbl: "사용자 단계:",
+            stepPH: "선택 사항: 30,80,120,...",
+            ringsCountLbl: "고리:",
+            rowLbl: "행:",
+            colLbl: "열:",
+            ringLbl: "전체 고리:",
+            ringHint: "고리",
+            btnAdd: "만들기",
+            btnLoad: "가져오기",
+            btnDl: "백업",
+            btnReset: "지우기",
+            errName: "체인 이름이 필요합니다.",
+            errNameDup: "같은 이름의 체인이 이미 있습니다.",
+            errNameReserved: "이 체인 이름은 사용할 수 없습니다.",
+            errAtLeast: "최소 1일을 선택하세요.",
+            dayNames: ["일", "월", "화", "수", "목", "금", "토"],
+            dayNamesFull: [
+              "일요일",
+              "월요일",
+              "화요일",
+              "수요일",
+              "목요일",
+              "금요일",
+              "토요일",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "진행: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "고리: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "합계: " + t + "&nbsp;|&nbsp;단계: " + ms;
+            },
+            delConfirm: "이 체인을 삭제할까요?",
+            noteTitle: "메모",
+            notePH: "이 고리에 대한 메모를 작성하세요...",
+            noteOk: "저장",
+            noteCancel: "취소",
+            noteClear: "메모 삭제",
+            noChain: "다운로드할 체인이 없습니다.",
+            badJson: "JSON 형식이 올바르지 않습니다.",
+            badFile: "잘못된 파일: ",
+            loadOk: "백업을 성공적으로 불러왔습니다.",
+            viewTable: "표",
+            viewSnake: "뱀",
+            appTitle: "체인을 끊지 마라!",
+            chainBtnDel: "삭제",
+            chainBtnNote: "메모",
+            notesSummary: "메모",
+            notesSummaryRings: "개 고리",
+            layoutPrefix: "레이아웃:",
+            layoutRows: "행",
+            layoutCols: "열",
+            layoutTotal: "전체 칸",
+            layoutEmpty: "빈 칸:",
+            layoutEmptySuffix: "",
+            topBarLang: "언어",
+            topBarTheme: "테마",
+            themeDefault: "기본",
+            themeDark: "다크",
+            themeNight: "야간",
+            themeMatrix: "매트릭스",
+            themeUnicorn: "유니콘",
+            themeCyberpunk: "사이버펑크",
+            themeRetro: "레트로",
+            themeDefter: "노트",
+            chainTabLabel: "체인",
+            supportLabel: "후원하기",
+            locale: "ko-KR",
+          },
+          az: {
+            kindLbl: "Növ:",
+            dated: "Təqvim",
+            count: "Sayına görə",
+            goalLbl: "Məqsədim:",
+            goalPH: "Hər gün 1 saat kitab oxuyacağam!",
+            goalPHcount: "210 səhifəlik kitab oxuyacağam!",
+            startLbl: "Başlanğıc:",
+            endLbl: "Son:",
+            daysLbl: "Günlər:",
+            totalLbl: "Məqsəd:",
+            stepLbl: "Fərdi addımlar:",
+            stepPH: "istəyə bağlı: 30,80,120,...",
+            ringsCountLbl: "Halqalar:",
+            rowLbl: "Sətirlər:",
+            colLbl: "Sütunlar:",
+            ringLbl: "Ümumi halqalar:",
+            ringHint: "halqa",
+            btnAdd: "Yarat",
+            btnLoad: "İdxal et",
+            btnDl: "Ehtiyat",
+            btnReset: "Təmizlə",
+            errName: "Zəncirin adı tələb olunur.",
+            errNameDup: "Bu adda zəncir artıq mövcuddur.",
+            errNameReserved: "Bu zəncir adından istifadə etmək olmaz.",
+            errAtLeast: "Ən azı 1 gün seçin.",
+            dayNames: ["B.", "B.e", "Ç.a", "Ç.", "C.a", "C.", "Ş."],
+            dayNamesFull: [
+              "Bazar",
+              "Bazar ertəsi",
+              "Çərşənbə axşamı",
+              "Çərşənbə",
+              "Cümə axşamı",
+              "Cümə",
+              "Şənbə",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "İrəliləyiş: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Halqalar: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Ümumi: " + t + "&nbsp;|&nbsp;Mərhələlər: " + ms;
+            },
+            delConfirm: "Bu zənciri silmək istəyirsiniz?",
+            noteTitle: "Qeyd",
+            notePH: "Bu halqa üçün qeyd yazın...",
+            noteOk: "Yadda saxla",
+            noteCancel: "Ləğv et",
+            noteClear: "Qeydi sil",
+            noChain: "Yükləmək üçün zəncir yoxdur.",
+            badJson: "JSON formatı yanlışdır.",
+            badFile: "Yanlış fayl: ",
+            loadOk: "Ehtiyat nüsxəsi uğurla yükləndi.",
+            viewTable: "Cədvəl",
+            viewSnake: "İlan",
+            appTitle: "Zənciri qırma!",
+            chainBtnDel: "Sil",
+            chainBtnNote: "Qeyd",
+            notesSummary: "Qeydlər",
+            notesSummaryRings: "halqada",
+            layoutPrefix: "Düzülüş:",
+            layoutRows: "sətir",
+            layoutCols: "sütun",
+            layoutTotal: "ümumi xana",
+            layoutEmpty: "boş xana:",
+            layoutEmptySuffix: "ədəd",
+            topBarLang: "Dil",
+            topBarTheme: "Mövzu",
+            themeDefault: "Standart",
+            themeDark: "Tünd",
+            themeNight: "Gecə",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Təkbuynuz",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Retro",
+            themeDefter: "Dəftər",
+            chainTabLabel: "Zəncir",
+            supportLabel: "Dəstək ol",
+            locale: "az",
+          },
+          bn: {
+            kindLbl: "ধরন:",
+            dated: "ক্যালেন্ডার",
+            count: "সংখ্যা অনুসারে",
+            goalLbl: "আমার লক্ষ্য:",
+            goalPH: "আমি প্রতিদিন ১ ঘণ্টা পড়ব!",
+            goalPHcount: "আমি ২১০ পৃষ্ঠার একটি বই পড়ব!",
+            startLbl: "শুরু:",
+            endLbl: "শেষ:",
+            daysLbl: "দিন:",
+            totalLbl: "লক্ষ্য:",
+            stepLbl: "কাস্টম ধাপ:",
+            stepPH: "ঐচ্ছিক: 30,80,120,...",
+            ringsCountLbl: "রিং:",
+            rowLbl: "সারি:",
+            colLbl: "কলাম:",
+            ringLbl: "মোট রিং:",
+            ringHint: "রিং",
+            btnAdd: "তৈরি করুন",
+            btnLoad: "আমদানি",
+            btnDl: "ব্যাকআপ",
+            btnReset: "মুছুন",
+            errName: "শিকলের নাম প্রয়োজন।",
+            errNameDup: "এই নামে একটি শিকল ইতিমধ্যে আছে।",
+            errNameReserved: "এই শিকলের নাম ব্যবহার করা যাবে না।",
+            errAtLeast: "অন্তত ১ দিন নির্বাচন করুন।",
+            dayNames: ["রবি", "সোম", "মঙ্গল", "বুধ", "বৃহ", "শুক্র", "শনি"],
+            dayNamesFull: [
+              "রবিবার",
+              "সোমবার",
+              "মঙ্গলবার",
+              "বুধবার",
+              "বৃহস্পতিবার",
+              "শুক্রবার",
+              "শনিবার",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "অগ্রগতি: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "রিং: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "মোট: " + t + "&nbsp;|&nbsp;ধাপ: " + ms;
+            },
+            delConfirm: "এই শিকলটি মুছবেন?",
+            noteTitle: "নোট",
+            notePH: "এই রিংয়ের জন্য একটি নোট লিখুন...",
+            noteOk: "সংরক্ষণ",
+            noteCancel: "বাতিল",
+            noteClear: "নোট মুছুন",
+            noChain: "ডাউনলোড করার মতো কোনো শিকল নেই।",
+            badJson: "অবৈধ JSON ফরম্যাট।",
+            badFile: "অবৈধ ফাইল: ",
+            loadOk: "ব্যাকআপ সফলভাবে লোড হয়েছে।",
+            viewTable: "টেবিল",
+            viewSnake: "সাপ",
+            appTitle: "শিকল ভেঙো না!",
+            chainBtnDel: "মুছুন",
+            chainBtnNote: "নোট",
+            notesSummary: "নোট",
+            notesSummaryRings: "রিংয়ে",
+            layoutPrefix: "বিন্যাস:",
+            layoutRows: "সারি",
+            layoutCols: "কলাম",
+            layoutTotal: "মোট ঘর",
+            layoutEmpty: "খালি ঘর:",
+            layoutEmptySuffix: "",
+            topBarLang: "ভাষা",
+            topBarTheme: "থিম",
+            themeDefault: "ডিফল্ট",
+            themeDark: "ডার্ক",
+            themeNight: "রাত",
+            themeMatrix: "ম্যাট্রিক্স",
+            themeUnicorn: "ইউনিকর্ন",
+            themeCyberpunk: "সাইবারপাঙ্ক",
+            themeRetro: "রেট্রো",
+            themeDefter: "নোটবুক",
+            chainTabLabel: "শিকল",
+            supportLabel: "সমর্থন করুন",
+            locale: "bn-BD",
+          },
           hi: {
             kindLbl: "प्रकार:",
             dated: "कैलेंडर",
@@ -3393,8 +4607,9 @@
         }
         function applyLangUI() {
           var T = t();
-          /* <html lang> attribute'unu güncelle (erişilebilirlik + SEO) */
+          /* <html lang> + yön (dir) güncelle (erişilebilirlik + SEO + RTL) */
           document.documentElement.setAttribute("lang", lang);
+          document.documentElement.setAttribute("dir", T.rtl ? "rtl" : "ltr");
           /* form labels */
           setTxt("lbl-kind", T.kindLbl);
           setTxt("lbl-goal", T.goalLbl);
@@ -3494,9 +4709,25 @@
           if (el) el.textContent = txt;
         }
         (function () {
-          var saved = localStorage.getItem(LK);
           var l;
-          if (saved) {
+          /* 1) URL ?lang=xx parametresi — en yüksek öncelik (paylaşılan linkler için).
+             Örn: nobreakchain.com/?lang=hi → doğrudan Hintçe açılır. */
+          var urlLang = null;
+          try {
+            urlLang = new URLSearchParams(window.location.search)
+              .get("lang");
+            if (urlLang) urlLang = urlLang.toLowerCase();
+          } catch (e) {
+            urlLang = null;
+          }
+          var saved = localStorage.getItem(LK);
+          if (urlLang && LANGS[urlLang]) {
+            /* URL'de geçerli bir dil var — onu kullan ve kalıcı kaydet */
+            l = urlLang;
+            try {
+              localStorage.setItem(LK, l);
+            } catch (e) {}
+          } else if (saved) {
             /* Kullanıcı daha önce seçim yapmış — onu kullan */
             l = saved;
           } else {
@@ -3510,6 +4741,32 @@
               l = "de";
             } else if (browserLang.startsWith("nl")) {
               l = "nl";
+            } else if (browserLang.startsWith("fr")) {
+              l = "fr";
+            } else if (browserLang.startsWith("it")) {
+              l = "it";
+            } else if (browserLang.startsWith("es")) {
+              l = "es";
+            } else if (browserLang.startsWith("pt")) {
+              l = "pt";
+            } else if (browserLang.startsWith("ar")) {
+              l = "ar";
+            } else if (browserLang.startsWith("fa")) {
+              l = "fa";
+            } else if (browserLang.startsWith("ur")) {
+              l = "ur";
+            } else if (browserLang.startsWith("ru")) {
+              l = "ru";
+            } else if (browserLang.startsWith("zh")) {
+              l = "zh";
+            } else if (browserLang.startsWith("ja")) {
+              l = "ja";
+            } else if (browserLang.startsWith("ko")) {
+              l = "ko";
+            } else if (browserLang.startsWith("az")) {
+              l = "az";
+            } else if (browserLang.startsWith("bn")) {
+              l = "bn";
             } else {
               l = "en";
             }
@@ -3521,6 +4778,12 @@
         })();
         langSelect.addEventListener("change", function () {
           applyLang(langSelect.value);
+          /* URL'deki ?lang= parametresini de güncelle (paylaşım tutarlılığı + sayfa yenilense de korunur) */
+          try {
+            var url = new URL(window.location.href);
+            url.searchParams.set("lang", langSelect.value);
+            window.history.replaceState({}, "", url);
+          } catch (e) {}
         });
 
         /* ── STEP PARSING ──
@@ -3814,8 +5077,22 @@
             hi: "चेन मत तोड़ो — विधि",
             de: "Brich die Kette nicht — Methode",
             nl: "Breek de ketting niet — Methode",
+            fr: "Ne brise pas la chaîne — Méthode",
+            it: "Non spezzare la catena — Metodo",
+            es: "No rompas la cadena — Método",
+            pt: "Não quebre a corrente — Método",
+            la: "Noli catenam frangere — Ratio",
+            ar: "لا تكسر السلسلة — الطريقة",
+            fa: "زنجیر را نشکن — روش",
+            ur: "زنجیر مت توڑو — طریقہ",
+            ru: "Не разрывай цепь — Метод",
+            zh: "不要断链 — 方法",
+            ja: "チェーンを切らさない — メソッド",
+            ko: "체인을 끊지 마라 — 방법",
+            az: "Zənciri qırma — Metod",
+            bn: "শিকল ভেঙো না — পদ্ধতি",
           };
-          var closeLabels = { tr: "Kapat", en: "Close", hi: "बंद करें", de: "Schließen", nl: "Sluiten" };
+          var closeLabels = { tr: "Kapat", en: "Close", hi: "बंद करें", de: "Schließen", nl: "Sluiten", fr: "Fermer", it: "Chiudi", es: "Cerrar", pt: "Fechar", la: "Claudere", ar: "إغلاق", fa: "بستن", ur: "بند کریں", ru: "Закрыть", zh: "关闭", ja: "閉じる", ko: "닫기", az: "Bağla", bn: "বন্ধ করুন" };
           title.textContent = helpTitles[lang] || helpTitles.en;
           var acts = document.createElement("div");
           acts.className = "chain-acts";
@@ -3850,6 +5127,20 @@
             hi: "help-content-tpl-hi",
             de: "help-content-tpl-de",
             nl: "help-content-tpl-nl",
+            fr: "help-content-tpl-fr",
+            it: "help-content-tpl-it",
+            es: "help-content-tpl-es",
+            pt: "help-content-tpl-pt",
+            la: "help-content-tpl-la",
+            ar: "help-content-tpl-ar",
+            fa: "help-content-tpl-fa",
+            ur: "help-content-tpl-ur",
+            ru: "help-content-tpl-ru",
+            zh: "help-content-tpl-zh",
+            ja: "help-content-tpl-ja",
+            ko: "help-content-tpl-ko",
+            az: "help-content-tpl-az",
+            bn: "help-content-tpl-bn",
           };
           var tplId = tplMap[lang] || tplMap.en;
           content.innerHTML = document.getElementById(tplId).innerHTML;
@@ -4015,6 +5306,20 @@
               hi: "विधि के बारे में",
               de: "Über die Methode",
               nl: "Over de methode",
+              fr: "À propos de la méthode",
+              it: "Informazioni sul metodo",
+              es: "Sobre el método",
+              pt: "Sobre o método",
+              la: "De ratione",
+              ar: "عن الطريقة",
+              fa: "درباره روش",
+              ur: "طریقے کے بارے میں",
+              ru: "О методе",
+              zh: "关于此方法",
+              ja: "メソッドについて",
+              ko: "방법 소개",
+              az: "Metod haqqında",
+              bn: "পদ্ধতি সম্পর্কে",
             };
             helpTab.title = helpTabTitles[lang] || helpTabTitles.en;
             helpTab.addEventListener("click", function () {
@@ -5531,6 +6836,1223 @@
           notitie toe te voegen.
         </li>
         <li>Gebruik Back-up / Laden om je gegevens op te slaan.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-fr">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 Qu'est-ce que la méthode « Ne brise pas la chaîne » ?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        « Ne brise pas la chaîne » (Don't Break the Chain) est une méthode de
+        productivité et de création d'habitudes attribuée à Jerry Seinfeld.
+        L'idée est simple : chaque jour où tu atteins ton objectif, tu marques ce
+        jour. À mesure que les jours s'enchaînent, ils forment une « chaîne » –
+        et il ne faut pas la rompre.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Comment ça marche ?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Choisis un objectif.</strong> Quelque chose de concret et
+          réalisable chaque jour, comme « Je lis 30 minutes par jour. »
+        </li>
+        <li>
+          <strong>Crée un calendrier ou une liste d'anneaux.</strong> Dans cette
+          application, tu peux créer des chaînes par date ou par étapes.
+        </li>
+        <li>
+          <strong>Fais-le chaque jour et marque-le.</strong> Chaque jour où tu
+          atteins ton objectif, marque l'anneau d'un ✕.
+        </li>
+        <li>
+          <strong>Ne brise pas la chaîne.</strong> Les marques consécutives
+          deviennent une motivation visuelle. Tu ne voudras pas rompre une longue
+          chaîne.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Pourquoi ça fonctionne
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Rend visibles les petits pas quotidiens et transforme des objectifs
+          abstraits en quelque chose de concret.
+        </li>
+        <li>
+          Crée un sentiment de continuité – chaque nouvel anneau s'appuie sur les
+          précédents.
+        </li>
+        <li>
+          Déplace l'attention du résultat vers le <em>processus</em>.
+        </li>
+        <li>
+          Facilite la reprise après un jour manqué – un anneau peut rester vide,
+          mais n'abandonne pas toute la chaîne.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Astuces de l'application
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Mode calendrier :</strong> Pour les habitudes qui se répètent
+          certains jours dans une période donnée. Lecture, sport, méditation…
+        </li>
+        <li>
+          <strong>Mode quantité :</strong> Définis un objectif total et le nombre
+          d'étapes. Pour un livre de 210 pages : 7 anneaux → 30 pages par anneau.
+        </li>
+        <li>
+          Clic droit (ou appui long) sur un anneau pour ajouter une note.
+        </li>
+        <li>Utilise Sauvegarde / Importer pour conserver tes données.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-it">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 Cos'è il metodo « Non spezzare la catena »?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        « Non spezzare la catena » (Don't Break the Chain) è un metodo di
+        produttività e costruzione di abitudini attribuito a Jerry Seinfeld.
+        L'idea è semplice: ogni giorno in cui raggiungi il tuo obiettivo, segni
+        quel giorno. Man mano che i giorni si allineano, formano una « catena » –
+        e non devi spezzarla.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Come funziona?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Scegli un obiettivo.</strong> Qualcosa di concreto e fattibile
+          ogni giorno, come « Leggo 30 minuti al giorno. »
+        </li>
+        <li>
+          <strong>Crea un calendario o un elenco di anelli.</strong> In questa
+          app puoi creare catene basate su date o su tappe.
+        </li>
+        <li>
+          <strong>Fallo ogni giorno e segnalo.</strong> Ogni giorno in cui
+          raggiungi il tuo obiettivo, segna l'anello con una ✕.
+        </li>
+        <li>
+          <strong>Non spezzare la catena.</strong> I segni consecutivi diventano
+          una motivazione visiva. Non vorrai spezzare una lunga catena.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Perché funziona
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Rende visibili i piccoli passi quotidiani, trasformando obiettivi
+          astratti in qualcosa di tangibile.
+        </li>
+        <li>
+          Crea un senso di continuità – ogni nuovo anello aggiunge valore ai
+          precedenti.
+        </li>
+        <li>
+          Sposta l'attenzione dal risultato al <em>processo</em>.
+        </li>
+        <li>
+          Rende più facile riprendere dopo un giorno saltato – un anello può
+          restare vuoto, ma non abbandonare l'intera catena.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Consigli sull'app
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Modalità calendario:</strong> Per abitudini che si ripetono in
+          giorni specifici entro un periodo. Lettura, sport, meditazione…
+        </li>
+        <li>
+          <strong>Modalità quantità:</strong> Imposta un obiettivo totale e il
+          numero di tappe. Per un libro di 210 pagine: 7 anelli → 30 pagine per
+          anello.
+        </li>
+        <li>
+          Clic destro (o pressione prolungata) su un anello per aggiungere una
+          nota.
+        </li>
+        <li>Usa Backup / Importa per salvare i tuoi dati.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-es">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 ¿Qué es el método «No rompas la cadena»?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «No rompas la cadena» (Don't Break the Chain) es un método de
+        productividad y creación de hábitos atribuido a Jerry Seinfeld. La idea
+        es sencilla: cada día que cumples tu objetivo, marcas ese día. A medida
+        que los días se alinean, forman una «cadena» – y no debes romperla.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        ¿Cómo funciona?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Elige un objetivo.</strong> Algo concreto y realizable a
+          diario, como «Leo 30 minutos cada día.»
+        </li>
+        <li>
+          <strong>Crea un calendario o una lista de anillos.</strong> En esta
+          aplicación puedes crear cadenas por fecha o por etapas.
+        </li>
+        <li>
+          <strong>Hazlo cada día y márcalo.</strong> Cada día que cumples tu
+          objetivo, marca el anillo con una ✕.
+        </li>
+        <li>
+          <strong>No rompas la cadena.</strong> Las marcas consecutivas se
+          convierten en una motivación visual. No querrás romper una cadena
+          larga.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Por qué funciona
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Hace visibles los pequeños pasos diarios y convierte objetivos
+          abstractos en algo tangible.
+        </li>
+        <li>
+          Crea una sensación de continuidad – cada nuevo anillo se apoya en los
+          anteriores.
+        </li>
+        <li>
+          Desplaza el foco del resultado hacia el <em>proceso</em>.
+        </li>
+        <li>
+          Facilita retomar el ritmo tras un día perdido – un anillo puede quedar
+          vacío, pero no abandones toda la cadena.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Consejos de la aplicación
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Modo calendario:</strong> Para hábitos que se repiten en días
+          concretos dentro de un periodo. Lectura, ejercicio, meditación…
+        </li>
+        <li>
+          <strong>Modo cantidad:</strong> Define un objetivo total y el número de
+          etapas. Para un libro de 210 páginas: 7 anillos → 30 páginas por
+          anillo.
+        </li>
+        <li>
+          Clic derecho (o pulsación larga) en un anillo para añadir una nota.
+        </li>
+        <li>Usa Copia / Importar para guardar tus datos.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-pt">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 O que é o método «Não quebre a corrente»?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «Não quebre a corrente» (Don't Break the Chain) é um método de
+        produtividade e criação de hábitos atribuído a Jerry Seinfeld. A ideia é
+        simples: a cada dia em que você cumpre seu objetivo, marca esse dia. À
+        medida que os dias se alinham, formam uma «corrente» – e você não deve
+        quebrá-la.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Como funciona?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Escolha um objetivo.</strong> Algo concreto e possível de fazer
+          diariamente, como «Leio 30 minutos por dia.»
+        </li>
+        <li>
+          <strong>Crie um calendário ou uma lista de anéis.</strong> Neste
+          aplicativo você pode criar correntes por data ou por etapas.
+        </li>
+        <li>
+          <strong>Faça todos os dias e marque.</strong> A cada dia em que cumpre
+          seu objetivo, marque o anel com um ✕.
+        </li>
+        <li>
+          <strong>Não quebre a corrente.</strong> Marcas consecutivas tornam-se
+          uma motivação visual. Você não vai querer quebrar uma corrente longa.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Por que funciona
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Torna visíveis os pequenos passos diários e transforma objetivos
+          abstratos em algo tangível.
+        </li>
+        <li>
+          Cria uma sensação de continuidade – cada novo anel acrescenta valor aos
+          anteriores.
+        </li>
+        <li>
+          Desloca o foco do resultado para o <em>processo</em>.
+        </li>
+        <li>
+          Facilita retomar o ritmo após um dia perdido – um anel pode ficar
+          vazio, mas não abandone toda a corrente.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Dicas do aplicativo
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Modo calendário:</strong> Para hábitos que se repetem em dias
+          específicos dentro de um período. Leitura, exercício, meditação…
+        </li>
+        <li>
+          <strong>Modo quantidade:</strong> Defina um objetivo total e o número
+          de etapas. Para um livro de 210 páginas: 7 anéis → 30 páginas por anel.
+        </li>
+        <li>
+          Clique com o botão direito (ou pressione e segure) em um anel para
+          adicionar uma nota.
+        </li>
+        <li>Use Backup / Importar para salvar seus dados.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-la">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 Quid est ratio «Noli catenam frangere»?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «Noli catenam frangere» (Don't Break the Chain) est ratio efficaciae et
+        consuetudinis aedificandae, Ieroni Seinfeld attributa. Consilium simplex
+        est: quoque die quo propositum tuum perficis, illum diem signas. Dum dies
+        in ordinem coeunt, «catenam» formant – quam frangere non debes.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Quomodo operatur?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Elige propositum.</strong> Rem concretam et cotidie factibilem,
+          velut «Cotidie triginta minuta legam.»
+        </li>
+        <li>
+          <strong>Calendarium aut indicem anulorum crea.</strong> In hac
+          applicatione catenas per diem aut per gradus creare potes.
+        </li>
+        <li>
+          <strong>Fac cotidie et signa.</strong> Quoque die quo propositum tuum
+          perficis, anulum nota ✕ signa.
+        </li>
+        <li>
+          <strong>Noli catenam frangere.</strong> Signa continua fiunt incitamentum
+          visibile. Longam catenam frangere non voles.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Cur operatur
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Parvos gradus cotidianos visibiles facit, proposita abstracta in rem
+          tangibilem vertens.
+        </li>
+        <li>
+          Sensum continuitatis creat – quisque novus anulus prioribus valorem
+          addit.
+        </li>
+        <li>
+          Curam ab exitu ad <em>processum</em> transfert.
+        </li>
+        <li>
+          Post diem omissum reditum faciliorem reddit – anulus vacuus manere
+          potest, sed noli totam catenam relinquere.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Consilia applicationis
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Modus calendarii:</strong> Pro consuetudinibus quae certis
+          diebus intra spatium temporis repetuntur. Lectio, exercitatio,
+          meditatio…
+        </li>
+        <li>
+          <strong>Modus numeri:</strong> Propositum totum et numerum graduum
+          constitue. Pro libro ducentarum decem paginarum: septem anuli → triginta
+          paginae per anulum.
+        </li>
+        <li>
+          Dextro mure (aut longa pressione) anulum tange ut notam addas.
+        </li>
+        <li>Utere Conservare / Importare ut data tua serves.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-ar">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 ما هي طريقة «لا تكسر السلسلة»؟
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «لا تكسر السلسلة» (Don't Break the Chain) هي طريقة للإنتاجية وبناء العادات
+        تُنسب إلى جيري ساينفيلد. الفكرة بسيطة: في كل يوم تحقق فيه هدفك، تضع علامة
+        على ذلك اليوم. وكلما اصطفّت الأيام، تكوّن «سلسلة» – ويجب ألّا تكسرها.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        كيف تعمل؟
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>اختر هدفًا.</strong> شيئًا ملموسًا ويمكن تحقيقه يوميًا، مثل
+          «أقرأ 30 دقيقة كل يوم.»
+        </li>
+        <li>
+          <strong>أنشئ تقويمًا أو قائمة حلقات.</strong> في هذا التطبيق يمكنك إنشاء
+          سلاسل حسب التاريخ أو حسب المراحل.
+        </li>
+        <li>
+          <strong>افعلها كل يوم وضع علامة.</strong> في كل يوم تحقق فيه هدفك، ضع
+          علامة ✕ على الحلقة.
+        </li>
+        <li>
+          <strong>لا تكسر السلسلة.</strong> العلامات المتتالية تصبح حافزًا مرئيًا.
+          لن ترغب في كسر سلسلة طويلة.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        لماذا تنجح
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          تجعل الخطوات اليومية الصغيرة مرئية، وتحوّل الأهداف المجردة إلى شيء ملموس.
+        </li>
+        <li>
+          تخلق إحساسًا بالاستمرارية – كل حلقة جديدة تضيف قيمة إلى ما قبلها.
+        </li>
+        <li>
+          تنقل التركيز من النتيجة إلى <em>العملية</em>.
+        </li>
+        <li>
+          تُسهّل العودة بعد يوم فائت – قد تبقى حلقة فارغة، لكن لا تتخلَّ عن السلسلة
+          بأكملها.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        نصائح التطبيق
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>وضع التقويم:</strong> للعادات التي تتكرر في أيام محددة ضمن فترة
+          زمنية. القراءة، الرياضة، التأمل…
+        </li>
+        <li>
+          <strong>وضع الكمية:</strong> حدد هدفًا إجماليًا وعدد المراحل. لكتاب من
+          210 صفحات: 7 حلقات → 30 صفحة لكل حلقة.
+        </li>
+        <li>
+          انقر بالزر الأيمن (أو اضغط مطولًا) على حلقة لإضافة ملاحظة.
+        </li>
+        <li>استخدم النسخة الاحتياطية / الاستيراد لحفظ بياناتك.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-fa">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 روش «زنجیر را نشکن» چیست؟
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «زنجیر را نشکن» (Don't Break the Chain) روشی برای بهره‌وری و ساختن عادت
+        است که به جری ساینفلد نسبت داده می‌شود. ایده ساده است: هر روزی که به هدفت
+        می‌رسی، آن روز را علامت می‌زنی. هرچه روزها پشت سر هم قرار بگیرند، یک
+        «زنجیره» می‌سازند – و نباید آن را بشکنی.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        چگونه کار می‌کند؟
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>یک هدف انتخاب کن.</strong> چیزی مشخص که هر روز شدنی باشد، مثل
+          «هر روز ۳۰ دقیقه می‌خوانم.»
+        </li>
+        <li>
+          <strong>یک تقویم یا فهرست حلقه بساز.</strong> در این برنامه می‌توانی
+          زنجیره‌هایی بر اساس تاریخ یا بر اساس مرحله بسازی.
+        </li>
+        <li>
+          <strong>هر روز انجامش بده و علامت بزن.</strong> هر روزی که به هدفت
+          می‌رسی، حلقه را با ✕ علامت بزن.
+        </li>
+        <li>
+          <strong>زنجیر را نشکن.</strong> علامت‌های پیاپی به انگیزه‌ای دیداری
+          تبدیل می‌شوند. دلت نمی‌خواهد زنجیره‌ای طولانی را بشکنی.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        چرا مؤثر است
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          گام‌های کوچک روزانه را دیدنی می‌کند و اهداف انتزاعی را به چیزی ملموس
+          تبدیل می‌کند.
+        </li>
+        <li>
+          حس تداوم می‌سازد – هر حلقه تازه به حلقه‌های پیشین ارزش می‌افزاید.
+        </li>
+        <li>
+          تمرکز را از نتیجه به <em>روند</em> منتقل می‌کند.
+        </li>
+        <li>
+          بازگشت پس از یک روز از دست رفته را آسان‌تر می‌کند – یک حلقه ممکن است
+          خالی بماند، اما کل زنجیره را رها نکن.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        نکته‌های برنامه
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>حالت تقویمی:</strong> برای عادت‌هایی که در روزهای مشخصی در یک
+          بازه زمانی تکرار می‌شوند. مطالعه، ورزش، مدیتیشن…
+        </li>
+        <li>
+          <strong>حالت تعدادی:</strong> یک هدف کلی و تعداد مراحل را تعیین کن. برای
+          کتابی ۲۱۰ صفحه‌ای: ۷ حلقه → هر حلقه ۳۰ صفحه.
+        </li>
+        <li>
+          روی یک حلقه راست‌کلیک کن (یا طولانی فشار بده) تا یادداشتی اضافه کنی.
+        </li>
+        <li>برای ذخیره داده‌هایت از پشتیبان / وارد کردن استفاده کن.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-ur">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 «زنجیر مت توڑو» طریقہ کیا ہے؟
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «زنجیر مت توڑو» (Don't Break the Chain) پیداواری صلاحیت اور عادت سازی کا
+        ایک طریقہ ہے جو جیری سائنفیلڈ سے منسوب ہے۔ خیال سادہ ہے: ہر وہ دن جب آپ
+        اپنا مقصد پورا کرتے ہیں، اُس دن پر نشان لگاتے ہیں۔ جیسے جیسے دن قطار میں
+        آتے ہیں، وہ ایک «زنجیر» بناتے ہیں – اور آپ کو اسے توڑنا نہیں ہے۔
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        یہ کیسے کام کرتا ہے؟
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>ایک مقصد چنیں۔</strong> کوئی ٹھوس چیز جو روزانہ ممکن ہو، جیسے
+          «میں ہر روز ۳۰ منٹ پڑھوں گا۔»
+        </li>
+        <li>
+          <strong>کیلنڈر یا حلقوں کی فہرست بنائیں۔</strong> اس ایپ میں آپ تاریخ کے
+          حساب سے یا مراحل کے حساب سے زنجیریں بنا سکتے ہیں۔
+        </li>
+        <li>
+          <strong>ہر روز کریں اور نشان لگائیں۔</strong> ہر وہ دن جب آپ اپنا مقصد
+          پورا کریں، حلقے پر ✕ کا نشان لگائیں۔
+        </li>
+        <li>
+          <strong>زنجیر مت توڑو۔</strong> مسلسل نشان ایک بصری ترغیب بن جاتے ہیں۔
+          آپ ایک لمبی زنجیر توڑنا نہیں چاہیں گے۔
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        یہ کیوں کارگر ہے
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          چھوٹے روزمرہ اقدامات کو نظر آنے والا بناتا ہے اور تجریدی مقاصد کو ٹھوس
+          چیز میں بدل دیتا ہے۔
+        </li>
+        <li>
+          تسلسل کا احساس پیدا کرتا ہے – ہر نیا حلقہ پچھلوں میں قدر کا اضافہ کرتا
+          ہے۔
+        </li>
+        <li>
+          توجہ کو نتیجے سے ہٹا کر <em>عمل</em> کی طرف لے جاتا ہے۔
+        </li>
+        <li>
+          ایک دن چھوٹ جانے کے بعد دوبارہ شروع کرنا آسان بناتا ہے – ایک حلقہ خالی رہ
+          سکتا ہے، لیکن پوری زنجیر کو مت چھوڑیں۔
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        ایپ کے مشورے
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>کیلنڈر موڈ:</strong> اُن عادتوں کے لیے جو ایک مدت کے اندر مخصوص
+          دنوں میں دہرائی جاتی ہیں۔ مطالعہ، ورزش، مراقبہ…
+        </li>
+        <li>
+          <strong>تعداد موڈ:</strong> ایک کل مقصد اور مراحل کی تعداد مقرر کریں۔
+          ۲۱۰ صفحات کی کتاب کے لیے: ۷ حلقے → فی حلقہ ۳۰ صفحات۔
+        </li>
+        <li>
+          نوٹ شامل کرنے کے لیے حلقے پر دایاں کلک کریں (یا دیر تک دبائیں)۔
+        </li>
+        <li>اپنا ڈیٹا محفوظ کرنے کے لیے بیک اپ / درآمد استعمال کریں۔</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-ru">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 Что такое метод «Не разрывай цепь»?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «Не разрывай цепь» (Don't Break the Chain) — это метод продуктивности и
+        формирования привычек, приписываемый Джерри Сайнфелду. Идея проста:
+        каждый день, когда вы достигаете своей цели, вы отмечаете этот день. По
+        мере того как дни выстраиваются в ряд, они образуют «цепь» — и её нельзя
+        разрывать.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Как это работает?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Выберите цель.</strong> Что-то конкретное и выполнимое каждый
+          день, например «Читаю по 30 минут в день.»
+        </li>
+        <li>
+          <strong>Создайте календарь или список звеньев.</strong> В этом
+          приложении можно создавать цепи по датам или по этапам.
+        </li>
+        <li>
+          <strong>Делайте каждый день и отмечайте.</strong> Каждый день, когда вы
+          достигаете цели, отмечайте звено крестиком ✕.
+        </li>
+        <li>
+          <strong>Не разрывайте цепь.</strong> Последовательные отметки
+          становятся наглядной мотивацией. Вам не захочется разрывать длинную
+          цепь.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Почему это работает
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Делает маленькие ежедневные шаги наглядными, превращая абстрактные цели
+          в нечто осязаемое.
+        </li>
+        <li>
+          Создаёт чувство непрерывности — каждое новое звено добавляет ценность
+          предыдущим.
+        </li>
+        <li>
+          Смещает внимание с результата на <em>процесс</em>.
+        </li>
+        <li>
+          Помогает вернуться в строй после пропущенного дня — звено может остаться
+          пустым, но не бросайте всю цепь.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Советы по приложению
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Режим календаря:</strong> Для привычек, которые повторяются в
+          определённые дни в течение периода. Чтение, спорт, медитация…
+        </li>
+        <li>
+          <strong>Режим количества:</strong> Задайте общую цель и число этапов.
+          Для книги в 210 страниц: 7 звеньев → по 30 страниц на звено.
+        </li>
+        <li>
+          Щёлкните правой кнопкой (или удерживайте) по звену, чтобы добавить
+          заметку.
+        </li>
+        <li>Используйте Резерв / Импорт для сохранения данных.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-zh">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 什么是「不要断链」方法？
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        「不要断链」（Don't Break the Chain）是一种提升效率、培养习惯的方法，一般认为出自杰瑞·宋飞。理念很简单：每完成一天的目标，就在那天做个标记。日子一天天连起来，就形成一条「链条」——而你不应让它断掉。
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        如何运作？
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>选择一个目标。</strong>选择每天都能完成的具体事项，例如「我每天读 30 分钟」。
+        </li>
+        <li>
+          <strong>创建日历或环列表。</strong>在本应用中，你可以按日期或按阶段创建链条。
+        </li>
+        <li>
+          <strong>每天去做并做标记。</strong>每完成一天目标，就在环上打一个 ✕。
+        </li>
+        <li>
+          <strong>不要断链。</strong>连续的标记会成为一种视觉激励。你不会想让一条长链断掉。
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        为什么有效
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>让每天的小步骤变得可见，把抽象目标变成具体可感的东西。</li>
+        <li>营造连续感——每个新环都为之前的环增添价值。</li>
+        <li>把注意力从结果转向<em>过程</em>。</li>
+        <li>让你在漏掉一天后更容易重新开始——某个环可以空着，但不要放弃整条链。</li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        应用小提示
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>日历模式：</strong>适用于在一段时期内特定日子重复的习惯。阅读、运动、冥想……
+        </li>
+        <li>
+          <strong>数量模式：</strong>设定总目标和阶段数量。一本 210 页的书：7 个环 → 每环 30 页。
+        </li>
+        <li>在环上右键单击（或长按）即可添加备注。</li>
+        <li>使用备份 / 导入来保存你的数据。</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-ja">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗「チェーンを切らさない」メソッドとは？
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        「チェーンを切らさない」（Don't Break the Chain）は、ジェリー・サインフェルドが考案したとされる生産性・習慣づくりのメソッドです。考え方はシンプルで、目標を達成した日にその日へ印をつけます。日々が連なっていくと一本の「チェーン」になり、それを切らさないようにします。
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        どう機能するの？
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>目標を選ぶ。</strong>「毎日30分読む」のような、毎日できる具体的なことを選びましょう。
+        </li>
+        <li>
+          <strong>カレンダーまたはリング一覧を作る。</strong>このアプリでは、日付ベースまたは段階ベースのチェーンを作れます。
+        </li>
+        <li>
+          <strong>毎日実行して印をつける。</strong>目標を達成した日ごとに、リングへ ✕ の印をつけます。
+        </li>
+        <li>
+          <strong>チェーンを切らさない。</strong>連続した印が目に見えるモチベーションになります。長いチェーンは切りたくなくなります。
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        なぜ効果があるのか
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>毎日の小さな一歩を見える化し、抽象的な目標を具体的なものに変えます。</li>
+        <li>連続している感覚を生み出し、新しいリングが前のリングに価値を加えます。</li>
+        <li>意識を結果から<em>プロセス</em>へと移します。</li>
+        <li>1日抜けても再開しやすくなります。リングは空のままでも構いませんが、チェーン全体は諦めないでください。</li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        アプリのヒント
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>カレンダーモード：</strong>一定期間内の特定の曜日に繰り返す習慣向け。読書、運動、瞑想など……
+        </li>
+        <li>
+          <strong>数量モード：</strong>合計目標と段階数を設定します。210ページの本なら、7つのリング → 1リングあたり30ページ。
+        </li>
+        <li>リングを右クリック（または長押し）するとメモを追加できます。</li>
+        <li>データを保存するにはバックアップ / 読み込みを使ってください。</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-ko">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 '체인을 끊지 마라' 방법이란?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        '체인을 끊지 마라'(Don't Break the Chain)는 제리 사인펠드가 고안했다고 알려진 생산성·습관 형성 방법입니다. 원리는 간단합니다. 목표를 이룬 날마다 그날에 표시를 합니다. 날들이 줄지어 이어지면 하나의 '체인'이 만들어지며, 그것을 끊지 말아야 합니다.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        어떻게 작동하나요?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>목표를 정하세요.</strong> '매일 30분 읽기'처럼 매일 할 수 있는 구체적인 것을 고르세요.
+        </li>
+        <li>
+          <strong>달력 또는 고리 목록을 만드세요.</strong> 이 앱에서는 날짜 기반 또는 단계 기반 체인을 만들 수 있습니다.
+        </li>
+        <li>
+          <strong>매일 실천하고 표시하세요.</strong> 목표를 이룬 날마다 고리에 ✕ 표시를 하세요.
+        </li>
+        <li>
+          <strong>체인을 끊지 마세요.</strong> 연속된 표시는 눈에 보이는 동기가 됩니다. 긴 체인을 끊고 싶지 않게 됩니다.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        왜 효과가 있을까요
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>매일의 작은 걸음을 눈에 보이게 하여 추상적인 목표를 구체적인 것으로 바꿉니다.</li>
+        <li>연속성의 감각을 만들어 줍니다. 새 고리마다 앞선 고리에 가치를 더합니다.</li>
+        <li>초점을 결과에서 <em>과정</em>으로 옮깁니다.</li>
+        <li>하루를 놓친 뒤에도 다시 시작하기 쉽게 합니다. 고리 하나는 비어 있어도 되지만, 체인 전체를 포기하지 마세요.</li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        앱 팁
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>달력 모드:</strong> 일정 기간 안에서 특정 요일에 반복되는 습관용. 독서, 운동, 명상…
+        </li>
+        <li>
+          <strong>개수 모드:</strong> 전체 목표와 단계 수를 설정합니다. 210쪽짜리 책이라면 고리 7개 → 고리당 30쪽.
+        </li>
+        <li>고리를 우클릭(또는 길게 누르기)하면 메모를 추가할 수 있습니다.</li>
+        <li>데이터를 저장하려면 백업 / 가져오기를 사용하세요.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-az">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 «Zənciri qırma» metodu nədir?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «Zənciri qırma» (Don't Break the Chain) Cerri Saynfeldə aid edilən
+        məhsuldarlıq və vərdiş formalaşdırma metodudur. Fikir çox sadədir: hər
+        gün məqsədinizə çatdıqda o günü işarələyirsiniz. Günlər ardıcıl
+        düzüldükcə bir «zəncir» yaranır – və onu qırmamalısınız.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Necə işləyir?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Bir məqsəd seçin.</strong> Hər gün edilə bilən konkret bir şey,
+          məsələn «Hər gün 30 dəqiqə oxuyacağam.»
+        </li>
+        <li>
+          <strong>Təqvim və ya halqa siyahısı yaradın.</strong> Bu tətbiqdə tarix
+          əsaslı və ya mərhələ əsaslı zəncirlər yarada bilərsiniz.
+        </li>
+        <li>
+          <strong>Hər gün edin və işarələyin.</strong> Məqsədinizə çatdığınız hər
+          gün halqanı ✕ ilə işarələyin.
+        </li>
+        <li>
+          <strong>Zənciri qırmayın.</strong> Ardıcıl işarələr görmə motivasiyasına
+          çevrilir. Uzun bir zənciri qırmaq istəməzsiniz.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Niyə işə yarayır
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Kiçik gündəlik addımları görünən edir, mücərrəd məqsədləri əlçatan bir
+          şeyə çevirir.
+        </li>
+        <li>
+          Davamlılıq hissi yaradır – hər yeni halqa əvvəlkilərə dəyər qatır.
+        </li>
+        <li>
+          Diqqəti nəticədən <em>prosesə</em> yönəldir.
+        </li>
+        <li>
+          Buraxılmış bir gündən sonra geri qayıtmağı asanlaşdırır – bir halqa boş
+          qala bilər, amma bütün zənciri tərk etməyin.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Tətbiq məsləhətləri
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Təqvim rejimi:</strong> Müəyyən bir dövr ərzində konkret
+          günlərdə təkrarlanan vərdişlər üçün. Oxumaq, idman, meditasiya…
+        </li>
+        <li>
+          <strong>Say rejimi:</strong> Ümumi məqsəd və mərhələ sayını təyin edin.
+          210 səhifəlik kitab üçün: 7 halqa → hər halqaya 30 səhifə.
+        </li>
+        <li>
+          Qeyd əlavə etmək üçün halqaya sağ klik edin (və ya uzun basın).
+        </li>
+        <li>Məlumatlarınızı saxlamaq üçün Ehtiyat / İdxal funksiyasından istifadə edin.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-bn">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 «শিকল ভেঙো না» পদ্ধতি কী?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        «শিকল ভেঙো না» (Don't Break the Chain) হলো উৎপাদনশীলতা ও অভ্যাস গড়ে তোলার
+        একটি পদ্ধতি, যা জেরি সাইনফেল্ডের সঙ্গে যুক্ত করা হয়। ধারণাটি সহজ: প্রতিদিন
+        আপনি যখন আপনার লক্ষ্য অর্জন করেন, সেই দিনটিকে চিহ্নিত করেন। দিনগুলো পরপর
+        সাজলে একটি «শিকল» তৈরি হয় – আর সেটি ভাঙা উচিত নয়।
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        এটি কীভাবে কাজ করে?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>একটি লক্ষ্য বেছে নিন।</strong> প্রতিদিন করা সম্ভব এমন সুনির্দিষ্ট
+          কিছু, যেমন «আমি প্রতিদিন ৩০ মিনিট পড়ব।»
+        </li>
+        <li>
+          <strong>একটি ক্যালেন্ডার বা রিং তালিকা তৈরি করুন।</strong> এই অ্যাপে আপনি
+          তারিখভিত্তিক বা ধাপভিত্তিক শিকল তৈরি করতে পারেন।
+        </li>
+        <li>
+          <strong>প্রতিদিন করুন এবং চিহ্নিত করুন।</strong> প্রতিদিন লক্ষ্য অর্জন
+          করলে রিংটিতে ✕ চিহ্ন দিন।
+        </li>
+        <li>
+          <strong>শিকল ভেঙো না।</strong> পরপর চিহ্নগুলো একটি দৃশ্যমান অনুপ্রেরণা হয়ে
+          ওঠে। দীর্ঘ একটি শিকল ভাঙতে আপনার ইচ্ছে করবে না।
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        কেন এটি কার্যকর
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          ছোট দৈনিক পদক্ষেপগুলোকে দৃশ্যমান করে তোলে, বিমূর্ত লক্ষ্যকে বাস্তব কিছুতে
+          রূপান্তরিত করে।
+        </li>
+        <li>
+          ধারাবাহিকতার অনুভূতি তৈরি করে – প্রতিটি নতুন রিং আগেরগুলোর সঙ্গে মূল্য যোগ
+          করে।
+        </li>
+        <li>
+          মনোযোগ ফলাফল থেকে <em>প্রক্রিয়ার</em> দিকে সরিয়ে নেয়।
+        </li>
+        <li>
+          একটি দিন বাদ পড়ার পরও আবার শুরু করা সহজ করে – একটি রিং খালি থাকতে পারে,
+          কিন্তু পুরো শিকল ছেড়ে দেবেন না।
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        অ্যাপ পরামর্শ
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>ক্যালেন্ডার মোড:</strong> একটি সময়সীমার মধ্যে নির্দিষ্ট দিনে
+          পুনরাবৃত্ত অভ্যাসের জন্য। পড়া, ব্যায়াম, ধ্যান…
+        </li>
+        <li>
+          <strong>সংখ্যা মোড:</strong> একটি মোট লক্ষ্য এবং ধাপের সংখ্যা নির্ধারণ
+          করুন। ২১০ পৃষ্ঠার বইয়ের জন্য: ৭টি রিং → প্রতি রিংয়ে ৩০ পৃষ্ঠা।
+        </li>
+        <li>
+          নোট যোগ করতে রিংয়ে ডান-ক্লিক করুন (বা চেপে ধরুন)।
+        </li>
+        <li>আপনার ডেটা সংরক্ষণ করতে ব্যাকআপ / আমদানি ব্যবহার করুন।</li>
       </ul>
     </template>
 
