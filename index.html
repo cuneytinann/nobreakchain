@@ -2400,6 +2400,29 @@
         width: 0.85rem;
         text-align: center;
       }
+      /* Destek Ol — tıklanabilir link, footer-line görünümünü korur ama aktif */
+      .footer-support {
+        pointer-events: auto;
+        user-select: auto;
+        cursor: pointer;
+        opacity: 0.85;
+        text-decoration: none;
+        transition: opacity 0.18s ease, filter 0.18s ease;
+      }
+      .footer-support .fa-mug-hot {
+        color: #c0392b;
+      }
+      .footer-support:hover {
+        opacity: 1;
+        filter: brightness(1.1);
+        text-decoration: underline;
+      }
+      /* toggle-center: toggle butonu wrapper'ı */
+      .toggle-center {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
       /* Mobil footer öğeleri varsayılan: gizli */
       .footer-mobile {
         display: none;
@@ -2719,30 +2742,53 @@
         <!-- /panel -->
 
         <!-- Desktop footer: panel kolonunun altında (mobilde gizli) -->
-        <div class="footer-block footer-desktop" aria-label="İletişim">
-          <span class="footer-line">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            linkedin.com/in/cuneytinan
-          </span>
-          <span class="footer-line">
-            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-            cuneytinan37@gmail.com
-          </span>
+        <div class="footer-block footer-desktop" aria-label="Bağlantılar">
+          <a
+            class="footer-line footer-support"
+            href="https://cuneytinan.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            cuneytinan.com
+          </a>
+          <a
+            class="footer-line footer-support"
+            href="https://kreosus.com/cuneytinan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+            <span id="support-label-desktop">Destek Ol</span>
+          </a>
         </div>
       </div>
       <!-- /panel-col -->
 
       <!-- toggle strip -->
       <div id="toggle-col">
-        <span class="footer-line footer-mobile footer-mobile-left">
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          linkedin.com/in/cuneytinan
-        </span>
-        <button id="btn-toggle" title="Paneli gizle / göster">◀</button>
-        <span class="footer-line footer-mobile footer-mobile-right">
-          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-          cuneytinan37@gmail.com
-        </span>
+        <a
+          class="footer-line footer-support footer-mobile footer-mobile-left"
+          href="https://cuneytinan.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          cuneytinan.com
+        </a>
+        <div class="toggle-center">
+          <button id="btn-toggle" title="Paneli gizle / göster">◀</button>
+        </div>
+        <a
+          class="footer-line footer-support footer-mobile footer-mobile-right"
+          href="https://kreosus.com/cuneytinan"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Destek Ol"
+        >
+          <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+          <span id="support-label-mobile">Destek Ol</span>
+        </a>
       </div>
 
       <!-- chain column -->
@@ -2864,6 +2910,7 @@
             themeRetro: "Retro",
             themeDefter: "Defter",
             chainTabLabel: "Zincir",
+            supportLabel: "Destek Ol",
             locale: "tr-TR",
           },
           en: {
@@ -2946,6 +2993,7 @@
             themeRetro: "Retro",
             themeDefter: "Notebook",
             chainTabLabel: "Chain",
+            supportLabel: "Support me",
             locale: "en-US",
           },
         };
@@ -3106,6 +3154,11 @@
           setTxt("lbl-rings", T.ringLbl);
           setTxt("lbl-dated", T.dated);
           setTxt("lbl-count", T.count);
+          /* destek ol linki */
+          if (T.supportLabel) {
+            setTxt("support-label-desktop", T.supportLabel);
+            setTxt("support-label-mobile", T.supportLabel);
+          }
           /* başlık */
           var mt = document.querySelector(".main-title");
           if (mt) mt.textContent = T.appTitle;
