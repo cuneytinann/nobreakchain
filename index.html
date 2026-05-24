@@ -1067,8 +1067,8 @@
       .top-bar-group {
         display: flex;
         align-items: center;
-        gap: 0.3rem;
-        padding: 0.28rem 0.4rem;
+        gap: 0.25rem;
+        padding: 0.28rem 0.3rem;
         min-width: 0;
       }
       #top-bar-lang {
@@ -1088,10 +1088,11 @@
         }
       }
       .top-bar-lbl {
-        font-size: 0.68rem;
+        font-size: 0.62rem;
         font-weight: 700;
         color: var(--lbl-color);
         white-space: nowrap;
+        letter-spacing: -0.01em;
       }
       /* Mobil (panel geniş): hepsi tek satır, kırılım yok */
       @media (max-width: 899px) {
@@ -1167,11 +1168,11 @@
       }
       /* Sabit select genişlikleri: dil/tema seçimi top-bar layout'unu bozmasın */
       #lang-select {
-        width: 3rem;
+        width: 2.8rem;
         flex-shrink: 0;
       }
       #theme-select {
-        width: 5.5rem;
+        width: 4.8rem;
         flex-shrink: 0;
       }
       /* Mobil (panel geniş) — daha rahat genişlikler */
@@ -2482,6 +2483,9 @@
               <select id="lang-select" class="s-select">
                 <option value="tr">TR</option>
                 <option value="en">EN</option>
+                <option value="hi">HI</option>
+                <option value="de">DE</option>
+                <option value="nl">NL</option>
               </select>
             </div>
             <div class="top-bar-group" id="top-bar-theme">
@@ -2996,6 +3000,255 @@
             supportLabel: "Support me",
             locale: "en-US",
           },
+          de: {
+            kindLbl: "Typ:",
+            dated: "Kalender",
+            count: "Nach Anzahl",
+            goalLbl: "Mein Ziel:",
+            goalPH: "Ich lese jeden Tag 1 Stunde!",
+            goalPHcount: "Ich lese ein Buch mit 210 Seiten!",
+            startLbl: "Beginn:",
+            endLbl: "Ende:",
+            daysLbl: "Tage:",
+            totalLbl: "Ziel:",
+            stepLbl: "Eigene Schritte:",
+            stepPH: "optional: 30,80,120,...",
+            ringsCountLbl: "Ringe:",
+            rowLbl: "Zeilen:",
+            colLbl: "Spalten:",
+            ringLbl: "Ringe gesamt:",
+            ringHint: "Ringe",
+            btnAdd: "Erstellen",
+            btnLoad: "Laden",
+            btnDl: "Sichern",
+            btnReset: "Leeren",
+            errName: "Ein Name für die Kette ist erforderlich.",
+            errNameDup: "Eine Kette mit diesem Namen existiert bereits.",
+            errNameReserved: "Dieser Kettenname ist nicht zulässig.",
+            errAtLeast: "Wähle mindestens 1 Tag aus.",
+            dayNames: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+            dayNamesFull: [
+              "Sonntag",
+              "Montag",
+              "Dienstag",
+              "Mittwoch",
+              "Donnerstag",
+              "Freitag",
+              "Samstag",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Fortschritt: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Ringe: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Gesamt: " + t + "&nbsp;|&nbsp;Etappen: " + ms;
+            },
+            delConfirm: "Diese Kette löschen?",
+            noteTitle: "Notiz",
+            notePH: "Schreibe eine Notiz für diesen Ring...",
+            noteOk: "Speichern",
+            noteCancel: "Abbrechen",
+            noteClear: "Notiz löschen",
+            noChain: "Keine Kette zum Herunterladen.",
+            badJson: "Ungültiges JSON-Format.",
+            badFile: "Ungültige Datei: ",
+            loadOk: "Sicherung erfolgreich geladen.",
+            viewTable: "Tabelle",
+            viewSnake: "Schlange",
+            appTitle: "Brich die Kette nicht!",
+            chainBtnDel: "Löschen",
+            chainBtnNote: "Notiz",
+            notesSummary: "Notizen",
+            notesSummaryRings: "Ringen",
+            layoutPrefix: "Layout:",
+            layoutRows: "Zeilen",
+            layoutCols: "Spalten",
+            layoutTotal: "Zellen gesamt",
+            layoutEmpty: "leere Zellen:",
+            layoutEmptySuffix: "",
+            topBarLang: "Sprache",
+            topBarTheme: "Design",
+            themeDefault: "Standard",
+            themeDark: "Dunkel",
+            themeNight: "Nacht",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Einhorn",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Retro",
+            themeDefter: "Notizbuch",
+            chainTabLabel: "Kette",
+            supportLabel: "Unterstützen",
+            locale: "de-DE",
+          },
+          nl: {
+            kindLbl: "Type:",
+            dated: "Kalender",
+            count: "Op aantal",
+            goalLbl: "Mijn doel:",
+            goalPH: "Ik lees elke dag 1 uur!",
+            goalPHcount: "Ik lees een boek van 210 pagina's!",
+            startLbl: "Start:",
+            endLbl: "Einde:",
+            daysLbl: "Dagen:",
+            totalLbl: "Doel:",
+            stepLbl: "Eigen stappen:",
+            stepPH: "optioneel: 30,80,120,...",
+            ringsCountLbl: "Ringen:",
+            rowLbl: "Rijen:",
+            colLbl: "Kolommen:",
+            ringLbl: "Totaal ringen:",
+            ringHint: "ringen",
+            btnAdd: "Aanmaken",
+            btnLoad: "Laden",
+            btnDl: "Back-up",
+            btnReset: "Wissen",
+            errName: "Een naam voor de ketting is verplicht.",
+            errNameDup: "Er bestaat al een ketting met deze naam.",
+            errNameReserved: "Deze kettingnaam is niet toegestaan.",
+            errAtLeast: "Kies minstens 1 dag.",
+            dayNames: ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"],
+            dayNamesFull: [
+              "Zondag",
+              "Maandag",
+              "Dinsdag",
+              "Woensdag",
+              "Donderdag",
+              "Vrijdag",
+              "Zaterdag",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "Voortgang: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "Ringen: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "Totaal: " + t + "&nbsp;|&nbsp;Etappes: " + ms;
+            },
+            delConfirm: "Deze ketting verwijderen?",
+            noteTitle: "Notitie",
+            notePH: "Schrijf een notitie voor deze ring...",
+            noteOk: "Opslaan",
+            noteCancel: "Annuleren",
+            noteClear: "Notitie verwijderen",
+            noChain: "Geen ketting om te downloaden.",
+            badJson: "Ongeldig JSON-formaat.",
+            badFile: "Ongeldig bestand: ",
+            loadOk: "Back-up succesvol geladen.",
+            viewTable: "Tabel",
+            viewSnake: "Slang",
+            appTitle: "Breek de ketting niet!",
+            chainBtnDel: "Verwijderen",
+            chainBtnNote: "Notitie",
+            notesSummary: "Notities",
+            notesSummaryRings: "ringen",
+            layoutPrefix: "Indeling:",
+            layoutRows: "rijen",
+            layoutCols: "kolommen",
+            layoutTotal: "cellen totaal",
+            layoutEmpty: "lege cellen:",
+            layoutEmptySuffix: "",
+            topBarLang: "Taal",
+            topBarTheme: "Thema",
+            themeDefault: "Standaard",
+            themeDark: "Donker",
+            themeNight: "Nacht",
+            themeMatrix: "Matrix",
+            themeUnicorn: "Eenhoorn",
+            themeCyberpunk: "Cyberpunk",
+            themeRetro: "Retro",
+            themeDefter: "Notitieboek",
+            chainTabLabel: "Ketting",
+            supportLabel: "Steun mij",
+            locale: "nl-NL",
+          },
+          hi: {
+            kindLbl: "प्रकार:",
+            dated: "कैलेंडर",
+            count: "गणनीय",
+            goalLbl: "मेरा लक्ष्य:",
+            goalPH: "मैं हर दिन 1 घंटा पढ़ूँगा!",
+            goalPHcount: "मैं 210 पन्नों की किताब पढ़ूँगा!",
+            startLbl: "शुरुआत:",
+            endLbl: "अंत:",
+            daysLbl: "दिन:",
+            totalLbl: "लक्ष्य:",
+            stepLbl: "कस्टम चरण:",
+            stepPH: "वैकल्पिक: 30,80,120,...",
+            ringsCountLbl: "रिंग:",
+            rowLbl: "पंक्तियाँ:",
+            colLbl: "स्तंभ:",
+            ringLbl: "कुल रिंग:",
+            ringHint: "रिंग",
+            btnAdd: "बनाएँ",
+            btnLoad: "आयात",
+            btnDl: "बैकअप",
+            btnReset: "साफ़ करें",
+            errName: "चेन का नाम आवश्यक है।",
+            errNameDup: "इस नाम की चेन पहले से मौजूद है।",
+            errNameReserved: "यह चेन नाम अनुमत नहीं है।",
+            errAtLeast: "कम से कम 1 दिन चुनें।",
+            dayNames: ["रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"],
+            dayNamesFull: [
+              "रविवार",
+              "सोमवार",
+              "मंगलवार",
+              "बुधवार",
+              "गुरुवार",
+              "शुक्रवार",
+              "शनिवार",
+            ],
+            monthShort: null,
+            progLbl: function (d, t, p) {
+              return "प्रगति: " + d + "/" + t + " (" + p + "%)";
+            },
+            chainInfo: function (n, f, l) {
+              return "रिंग: " + n + "&nbsp;|&nbsp;" + f + "&nbsp;–&nbsp;" + l;
+            },
+            chainInfoCount: function (t, ms) {
+              return "कुल: " + t + "&nbsp;|&nbsp;पड़ाव: " + ms;
+            },
+            delConfirm: "इस चेन को हटाएँ?",
+            noteTitle: "नोट",
+            notePH: "इस रिंग के लिए एक नोट लिखें...",
+            noteOk: "सहेजें",
+            noteCancel: "रद्द करें",
+            noteClear: "नोट हटाएँ",
+            noChain: "डाउनलोड करने के लिए कोई चेन नहीं।",
+            badJson: "अमान्य JSON प्रारूप।",
+            badFile: "अमान्य फ़ाइल: ",
+            loadOk: "बैकअप सफलतापूर्वक लोड हुआ।",
+            viewTable: "तालिका",
+            viewSnake: "साँप",
+            appTitle: "चेन मत तोड़ो!",
+            chainBtnDel: "हटाएँ",
+            chainBtnNote: "नोट",
+            notesSummary: "नोट",
+            notesSummaryRings: "रिंग में",
+            layoutPrefix: "लेआउट:",
+            layoutRows: "पंक्तियाँ",
+            layoutCols: "स्तंभ",
+            layoutTotal: "कुल कोशिकाएँ",
+            layoutEmpty: "खाली कोशिकाएँ:",
+            layoutEmptySuffix: "",
+            topBarLang: "भाषा",
+            topBarTheme: "थीम",
+            themeDefault: "डिफ़ॉल्ट",
+            themeDark: "डार्क",
+            themeNight: "रात",
+            themeMatrix: "मैट्रिक्स",
+            themeUnicorn: "यूनिकॉर्न",
+            themeCyberpunk: "साइबरपंक",
+            themeRetro: "रेट्रो",
+            themeDefter: "नोटबुक",
+            chainTabLabel: "चेन",
+            supportLabel: "सहयोग करें",
+            locale: "hi-IN",
+          },
         };
         var lang = "tr";
         function t() {
@@ -3140,6 +3393,8 @@
         }
         function applyLangUI() {
           var T = t();
+          /* <html lang> attribute'unu güncelle (erişilebilirlik + SEO) */
+          document.documentElement.setAttribute("lang", lang);
           /* form labels */
           setTxt("lbl-kind", T.kindLbl);
           setTxt("lbl-goal", T.goalLbl);
@@ -3245,10 +3500,22 @@
             /* Kullanıcı daha önce seçim yapmış — onu kullan */
             l = saved;
           } else {
-            /* İlk ziyaret — tarayıcı dilini algıla. TR ise Türkçe, değilse İngilizce */
+            /* İlk ziyaret — tarayıcı diline göre: tr→Türkçe, hi→Hintçe, de→Almanca, nl→Felemenkçe, diğer→İngilizce */
             var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-            l = browserLang.startsWith("tr") ? "tr" : "en";
+            if (browserLang.startsWith("tr")) {
+              l = "tr";
+            } else if (browserLang.startsWith("hi")) {
+              l = "hi";
+            } else if (browserLang.startsWith("de")) {
+              l = "de";
+            } else if (browserLang.startsWith("nl")) {
+              l = "nl";
+            } else {
+              l = "en";
+            }
           }
+          /* Kayıtlı dil artık desteklenmiyorsa İngilizce'ye düş */
+          if (!LANGS[l]) l = "en";
           lang = l;
           langSelect.value = l;
         })();
@@ -3531,7 +3798,6 @@
 
         function buildHelpCard() {
           var T = t();
-          var isEn = lang === "en";
           var card = document.createElement("div");
           card.className = "chain-card";
           card.dataset.id = HELP_ID;
@@ -3542,15 +3808,22 @@
           meta.className = "chain-meta";
           var title = document.createElement("div");
           title.className = "chain-title";
-          title.textContent = isEn
-            ? "Don't Break the Chain — Method"
-            : "Zinciri Kırma — Yöntem";
+          var helpTitles = {
+            tr: "Zinciri Kırma — Yöntem",
+            en: "Don't Break the Chain — Method",
+            hi: "चेन मत तोड़ो — विधि",
+            de: "Brich die Kette nicht — Methode",
+            nl: "Breek de ketting niet — Methode",
+          };
+          var closeLabels = { tr: "Kapat", en: "Close", hi: "बंद करें", de: "Schließen", nl: "Sluiten" };
+          title.textContent = helpTitles[lang] || helpTitles.en;
           var acts = document.createElement("div");
           acts.className = "chain-acts";
           var bclose = document.createElement("button");
           bclose.className = "btn-ca";
           bclose.innerHTML =
-            '<i class="fa-solid fa-xmark"></i> ' + (isEn ? "Close" : "Kapat");
+            '<i class="fa-solid fa-xmark"></i> ' +
+            (closeLabels[lang] || closeLabels.en);
           bclose.addEventListener("click", function () {
             /* help sekmesini tamamen kaldır, ilk zincire geç */
             var s = gs();
@@ -3571,7 +3844,14 @@
           content.className = "grid-wrap help-body";
           content.style.cssText =
             "flex:1;min-height:0;overflow-y:auto;padding:0.5rem 0.2rem;";
-          var tplId = isEn ? "help-content-tpl-en" : "help-content-tpl-tr";
+          var tplMap = {
+            tr: "help-content-tpl-tr",
+            en: "help-content-tpl-en",
+            hi: "help-content-tpl-hi",
+            de: "help-content-tpl-de",
+            nl: "help-content-tpl-nl",
+          };
+          var tplId = tplMap[lang] || tplMap.en;
           content.innerHTML = document.getElementById(tplId).innerHTML;
 
           card.appendChild(content);
@@ -3729,7 +4009,14 @@
             helpTab.className = "chain-tab active";
             helpTab.dataset.id = HELP_ID;
             helpTab.textContent = "?";
-            helpTab.title = lang === "en" ? "About the Method" : "Yöntem Hakkında";
+            var helpTabTitles = {
+              tr: "Yöntem Hakkında",
+              en: "About the Method",
+              hi: "विधि के बारे में",
+              de: "Über die Methode",
+              nl: "Over de methode",
+            };
+            helpTab.title = helpTabTitles[lang] || helpTabTitles.en;
             helpTab.addEventListener("click", function () {
               setActive(HELP_ID);
             });
@@ -4966,6 +5253,284 @@
           Right-click (or long-press) a ring to add a note.
         </li>
         <li>Use Backup / Import to save your data.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-hi">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 "चेन मत तोड़ो" विधि क्या है?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        "चेन मत तोड़ो" (Don't Break the Chain) एक उत्पादकता और आदत-निर्माण तकनीक
+        है, जिसका श्रेय जेरी सेनफेल्ड को दिया जाता है। विचार सरल है: हर दिन जब आप
+        अपना लक्ष्य पूरा करते हैं, तो उस दिन को चिह्नित करते हैं। जैसे-जैसे दिन
+        जुड़ते हैं, वे एक "चेन" बनाते हैं — और आपको इसे तोड़ना नहीं है।
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        यह कैसे काम करता है?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>एक लक्ष्य चुनें।</strong> कुछ ठोस और रोज़ाना करने योग्य चुनें,
+          जैसे "मैं हर दिन 30 मिनट पढ़ूँगा।"
+        </li>
+        <li>
+          <strong>कैलेंडर या रिंग सूची बनाएँ।</strong> इस ऐप में आप तिथि-आधारित या
+          चरण-आधारित चेन बना सकते हैं।
+        </li>
+        <li>
+          <strong>हर दिन करें और चिह्नित करें।</strong> हर दिन जब आप अपना लक्ष्य
+          पूरा करें, रिंग को ✕ से चिह्नित करें।
+        </li>
+        <li>
+          <strong>चेन मत तोड़ो।</strong> लगातार निशान एक दृश्य प्रेरणा बन जाते हैं।
+          आप एक लंबी चेन तोड़ना नहीं चाहेंगे।
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        यह क्यों काम करता है?
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          छोटे दैनिक कदमों को दृश्यमान बनाता है, अमूर्त लक्ष्यों को ठोस रूप देता है।
+        </li>
+        <li>
+          निरंतरता की भावना बनाता है — हर नई रिंग पिछली रिंगों में मूल्य जोड़ती है।
+        </li>
+        <li>परिणामों के बजाय <em>प्रक्रिया</em> पर ध्यान केंद्रित करता है।</li>
+        <li>
+          एक दिन छूटने के बाद वापस पटरी पर आना आसान बनाता है — एक रिंग खाली रह सकती
+          है, लेकिन पूरी चेन को मत छोड़ें।
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        ऐप सुझाव
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>कैलेंडर मोड:</strong> उन आदतों के लिए जो किसी तिथि सीमा के भीतर
+          विशिष्ट दिनों पर दोहराई जाती हैं। पढ़ना, व्यायाम, ध्यान…
+        </li>
+        <li>
+          <strong>गणनीय मोड:</strong> कुल लक्ष्य और चरणों की संख्या सेट करें।
+          210 पन्नों की किताब के लिए, 7 रिंग → प्रति रिंग 30 पन्ने।
+        </li>
+        <li>
+          नोट जोड़ने के लिए रिंग पर राइट-क्लिक करें (या देर तक दबाएँ)।
+        </li>
+        <li>अपना डेटा सहेजने के लिए बैकअप / आयात का उपयोग करें।</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-de">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 Was ist die „Brich die Kette nicht"-Methode?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        „Brich die Kette nicht" (Don't Break the Chain) ist eine Methode für
+        Produktivität und Gewohnheitsaufbau, die Jerry Seinfeld zugeschrieben
+        wird. Die Idee ist einfach: An jedem Tag, an dem du dein Ziel erreichst,
+        markierst du diesen Tag. Reihen sich die Tage aneinander, entsteht eine
+        „Kette" – und die solltest du nicht unterbrechen.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Wie funktioniert das?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Wähle ein Ziel.</strong> Etwas Konkretes, das du täglich
+          schaffen kannst, etwa „Ich lese jeden Tag 30 Minuten."
+        </li>
+        <li>
+          <strong>Lege einen Kalender oder eine Ringliste an.</strong> In dieser
+          App kannst du datumsbasierte oder schrittbasierte Ketten erstellen.
+        </li>
+        <li>
+          <strong>Mach es jeden Tag und markiere es.</strong> An jedem Tag, an
+          dem du dein Ziel erreichst, markierst du den Ring mit einem ✕.
+        </li>
+        <li>
+          <strong>Brich die Kette nicht.</strong> Aufeinanderfolgende Markierungen
+          werden zur sichtbaren Motivation. Eine lange Kette willst du nicht
+          unterbrechen.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Warum es funktioniert
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Macht kleine tägliche Schritte sichtbar und verwandelt abstrakte Ziele
+          in etwas Greifbares.
+        </li>
+        <li>
+          Schafft ein Gefühl von Kontinuität – jeder neue Ring baut auf den
+          vorherigen auf.
+        </li>
+        <li>
+          Lenkt den Fokus weg vom Ergebnis und hin zum <em>Prozess</em>.
+        </li>
+        <li>
+          Erleichtert den Wiedereinstieg nach einem verpassten Tag – ein Ring
+          darf leer bleiben, aber gib die Kette nicht ganz auf.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        App-Tipps
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Kalendermodus:</strong> Für Gewohnheiten, die sich an
+          bestimmten Tagen innerhalb eines Zeitraums wiederholen. Lesen, Sport,
+          Meditation…
+        </li>
+        <li>
+          <strong>Anzahl-Modus:</strong> Lege ein Gesamtziel und die Anzahl der
+          Etappen fest. Für ein Buch mit 210 Seiten: 7 Ringe → 30 Seiten pro
+          Ring.
+        </li>
+        <li>
+          Rechtsklick (oder langes Drücken) auf einen Ring, um eine Notiz
+          hinzuzufügen.
+        </li>
+        <li>Nutze Sichern / Laden, um deine Daten zu speichern.</li>
+      </ul>
+    </template>
+
+    <template id="help-content-tpl-nl">
+      <h3 style="margin: 0 0 0.6rem; font-size: 1rem; color: var(--ctitle)">
+        🔗 Wat is de „Breek de ketting niet"-methode?
+      </h3>
+      <p style="margin: 0 0 0.7rem; line-height: 1.6; font-size: 0.88rem">
+        „Breek de ketting niet" (Don't Break the Chain) is een methode voor
+        productiviteit en het opbouwen van gewoontes, toegeschreven aan Jerry
+        Seinfeld. Het idee is simpel: elke dag dat je je doel haalt, markeer je
+        die dag. Naarmate de dagen op een rij komen, vormen ze een „ketting" – en
+        die moet je niet onderbreken.
+      </p>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Hoe werkt het?
+      </h4>
+      <ol
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Kies een doel.</strong> Iets concreets dat je dagelijks kunt
+          volhouden, zoals „Ik lees elke dag 30 minuten."
+        </li>
+        <li>
+          <strong>Maak een kalender of ringenlijst aan.</strong> In deze app kun
+          je ketens op datum of op stappen maken.
+        </li>
+        <li>
+          <strong>Doe het elke dag en markeer het.</strong> Elke dag dat je je
+          doel haalt, markeer je de ring met een ✕.
+        </li>
+        <li>
+          <strong>Breek de ketting niet.</strong> Opeenvolgende markeringen
+          worden een zichtbare motivatie. Een lange ketting wil je niet
+          onderbreken.
+        </li>
+      </ol>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        Waarom het werkt
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.7rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          Maakt kleine dagelijkse stappen zichtbaar en verandert abstracte doelen
+          in iets tastbaars.
+        </li>
+        <li>
+          Schept een gevoel van continuïteit – elke nieuwe ring bouwt voort op de
+          vorige.
+        </li>
+        <li>
+          Verlegt de focus van het resultaat naar het <em>proces</em>.
+        </li>
+        <li>
+          Maakt het makkelijker om na een gemiste dag weer op gang te komen – een
+          ring mag leeg blijven, maar geef de ketting niet helemaal op.
+        </li>
+      </ul>
+      <h4 style="margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ctitle)">
+        App-tips
+      </h4>
+      <ul
+        style="
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          line-height: 1.7;
+          font-size: 0.88rem;
+        "
+      >
+        <li>
+          <strong>Kalendermodus:</strong> Voor gewoontes die op bepaalde dagen
+          binnen een periode terugkeren. Lezen, sporten, mediteren…
+        </li>
+        <li>
+          <strong>Aantal-modus:</strong> Stel een totaaldoel en het aantal
+          etappes in. Voor een boek van 210 pagina's: 7 ringen → 30 pagina's per
+          ring.
+        </li>
+        <li>
+          Klik met de rechtermuisknop (of houd ingedrukt) op een ring om een
+          notitie toe te voegen.
+        </li>
+        <li>Gebruik Back-up / Laden om je gegevens op te slaan.</li>
       </ul>
     </template>
 
