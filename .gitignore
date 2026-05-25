@@ -1,5 +1,5 @@
 ek_dosyalar
-push.bat
-connect.bat
+gitpush.bat
+gitconnect.bat
 seo-head-block.html
 .gitignore
