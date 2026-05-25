@@ -1,53 +1,61 @@
-# 🔗 Zinciri Kırma
+# 🔗 Don't Break the Chain
 
-**[zincirikirma.org](https://zincirikirma.org)** — Jerry Seinfeld'in ünlü *Don't Break the Chain* yöntemiyle alışkanlık takip uygulaması.
+**[nobreakchain.com](https://nobreakchain.com)** — A habit tracker based on Jerry Seinfeld's famous *Don't Break the Chain* method.
 
-Her gün hedefinizi gerçekleştirdiğinizde o günü işaretleyin. Günler üst üste gelince bir zincir oluşur — ve o zinciri kırmamalısınız.
+> Also available at [zincirikirma.org](https://zincirikirma.org) (redirects to the main domain).
 
----
-
-## Özellikler
-
-- 📅 **Takvimli mod** — Belirli tarih aralığında tekrar eden alışkanlıklar
-- 🔢 **Tarihsiz mod** — Toplam hedef ve kademe sayısı belirleyerek adım adım ilerleme
-- 🐍 **Yılan görünümü** — Alternatif zincir gösterimi
-- 🎨 **4 tema** — Açık, koyu, gece, matrix
-- 🌐 **İki dil** — Türkçe / İngilizce
-- 📝 **Not desteği** — Her halkaya not eklenebilir
-- 💾 **Yerel depolama** — Veriler tarayıcınızda kalır, kayıt gerekmez
-- 📤 **Yedek al / yükle** — JSON formatında dışa/içe aktarım
-- 📱 **Mobil uyumlu** — Responsive tasarım
+Every day you complete your goal, mark that day. As the days line up, they form a chain — and you must not break it.
 
 ---
 
-## Teknik
+## Features
 
-- Saf HTML + CSS + JavaScript (framework yok, bağımlılık yok)
-- Tüm veriler `localStorage`'da tutulur
-- Backend yok — tamamen client-side
-- Tek dosya: `index.html`
+- 📅 **Calendar mode** — Habits that repeat on specific days within a date range
+- 🔢 **Countable mode** — Step-by-step progress toward a total goal
+- 🐍 **Snake view** — Alternative chain layout
+- 🎨 **8 themes** — Default, Dark, Night, Matrix, Unicorn, Cyberpunk, Retro, Notebook
+- 🌐 **19 languages** — Auto-detected from the browser, switchable anytime (incl. RTL: Arabic, Persian, Urdu)
+- 📝 **Notes** — Add a note to any ring
+- 💾 **Local storage** — Your data stays in your browser, no signup required
+- 📤 **Backup / Import** — Export and import as JSON
+- 📱 **Mobile-friendly** — Responsive design
 
 ---
 
-## Geliştirme
+## Tech
 
-Projeyi yerel olarak çalıştırmak için sadece `index.html` dosyasını tarayıcıda açın.
+- Pure HTML + CSS + JavaScript (no framework, no dependencies)
+- All data stored in `localStorage`
+- No backend — fully client-side
+- Single file: `index.html`
+
+---
+
+## Development
+
+To run locally, just open `index.html` in your browser.
 
 ```bash
-# Repo'yu klonla
-git clone https://github.com/cuneytinann/zincirikirma.git
+# Clone the repo
+git clone https://github.com/cuneytinann/nobreakchain.git
 
-# index.html'i tarayıcıda aç — hepsi bu kadar
+# Open index.html in your browser — that's it
+```
+
+You can also open a specific language directly via URL, e.g. `?lang=de` for German:
+
+```
+https://nobreakchain.com/?lang=de
 ```
 
 ---
 
 ## Deployment
 
-[Vercel](https://vercel.com) üzerinde host edilmektedir. `main` branch'e her push'ta otomatik deploy edilir.
+Hosted on [Vercel](https://vercel.com). Every push to the `main` branch is deployed automatically.
 
 ---
 
-## Lisans
+## License
 
 MIT
